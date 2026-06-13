@@ -1,0 +1,79 @@
+{
+  "id": "nf-demo-1-1-0",
+  "parentProcessIds": [
+    "single-cell-10X"
+  ],
+  "childProcessIds": [],
+  "dataType": null,
+  "name": "nf-core/demo",
+  "desc": "An nf-core demo pipeline",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "Single-Cell Analysis",
+  "documentationUrl": "https://nf-co.re/demo",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/demo",
+    "version": "1.1.0"
+  },
+  "usesSampleSheet": true,
+  "allowMultipleSources": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "process-input.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "formJson": "process-form.json",
+  "webOptimizationJson": "process-output.json",
+  "fileMappingRules": [
+    {
+      "description": "fastqc outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "fastqc/SAMPLE1_PE",
+          "description": "fastqc",
+          "sampleMatchingPattern": "fastqc/.*"
+        }
+      ]
+    },
+    {
+      "description": "fq outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "fq/SAMPLE1_PE",
+          "description": "fq",
+          "sampleMatchingPattern": "fq/.*"
+        }
+      ]
+    },
+    {
+      "description": "multiqc outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "multiqc/multiqc_data",
+          "description": "multiqc",
+          "sampleMatchingPattern": "multiqc/.*"
+        }
+      ]
+    },
+    {
+      "description": "pipeline_info outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "pipeline_info/nf_core_demo_software_mqc_versions.yml",
+          "description": "pipeline_info",
+          "sampleMatchingPattern": "pipeline_info/.*"
+        }
+      ]
+    }
+  ]
+}
