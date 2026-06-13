@@ -1,0 +1,34 @@
+{
+  "id": "nf-seqinspector-1-0-1",
+  "parentProcessIds": [
+    "single-cell-10X"
+  ],
+  "childProcessIds": [],
+  "dataType": null,
+  "name": "nf-core/seqinspector",
+  "desc": "Pipeline to QC your sequences",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "Single-Cell Analysis",
+  "documentationUrl": "https://nf-co.re/seqinspector",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/seqinspector",
+    "version": "1.0.1"
+  },
+  "usesSampleSheet": true,
+  "allowMultipleSources": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "process-input.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "formJson": "process-form.json",
+  "webOptimizationJson": "process-output.json",
+  "fileMappingRules": []
+}
