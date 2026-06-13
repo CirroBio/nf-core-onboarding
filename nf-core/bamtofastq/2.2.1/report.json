@@ -57,14 +57,13 @@
       "custom_dataset"
     ],
     "run": {
-      "run_dataset_id": "bda00b7a-d7fd-4c8a-ae5c-890e643e89a5",
+      "run_dataset_id": "4264a073-05ab-40c8-87f1-80da2abdf47e",
       "terminal_status": "FAILED",
-      "duration_seconds": 302,
-      "output_dataset_url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/bda00b7a-d7fd-4c8a-ae5c-890e643e89a5",
+      "duration_seconds": 367,
+      "output_dataset_url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/4264a073-05ab-40c8-87f1-80da2abdf47e",
       "failed_task": "None",
-      "submitted_at": "2026-06-13T21:04:25Z",
-      "params": {},
-      "error_summary": "ERROR ~ Plugin nf-schema with version @2.6.1 does not exist in the repository"
+      "submitted_at": "2026-06-13T21:28:10Z",
+      "params": {}
     }
   },
   "bundle": {

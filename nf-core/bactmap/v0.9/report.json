@@ -58,14 +58,13 @@
       "custom_dataset"
     ],
     "run": {
-      "run_dataset_id": "e877ea60-5b19-41cd-805b-ea0bb810fc4a",
+      "run_dataset_id": "86ddaf9d-7500-4787-8178-2d7f9cf5f529",
       "terminal_status": "FAILED",
-      "duration_seconds": 281,
-      "output_dataset_url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/e877ea60-5b19-41cd-805b-ea0bb810fc4a",
+      "duration_seconds": 346,
+      "output_dataset_url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/86ddaf9d-7500-4787-8178-2d7f9cf5f529",
       "failed_task": "None",
-      "submitted_at": "2026-06-13T21:04:23Z",
-      "params": {},
-      "error_summary": "(see Cirro logs)"
+      "submitted_at": "2026-06-13T21:28:03Z",
+      "params": {}
     }
   },
   "bundle": {
