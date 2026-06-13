@@ -1,0 +1,83 @@
+{
+  "pipeline": "nf-core/circdna",
+  "version": "1.1.0",
+  "validated_at": "2026-06-13T20:50:35Z",
+  "validation": {
+    "overall": "PASS",
+    "oracle_wall_seconds": 1.6,
+    "tracks": {
+      "form_schema": "PASS",
+      "required_reachable": "PASS",
+      "paths_resolve": "PASS",
+      "preprocess_runs": "PASS"
+    },
+    "details": {
+      "form_schema": "valid JSON Schema",
+      "required_reachable": "all required params mapped",
+      "paths_resolve": "all mappings resolve",
+      "preprocess_runs": "2026-06-13 13:50:33,668 INFO     [PreprocessDataset] Final params (58 total): {\"input\": \"s3://example-bucket/dataset/sample_R1.fastq.gz\", \"input_format\": \"test\", \"bam_sorted\": true, \"save_sorted_bam\": true, \"outdir\": \"s3://example-bucket/dataset/sample_R1.fastq.gz\", \"email\": \"test\", \"multiqc_title\": \"test\", \"circle_identifier\": \"test\", \"genome\": \"test\", \"fasta\": \"s3://example-bucket/dataset/sample_R1.fastq.gz\", \"igenomes_ignore\": true, \"save_reference\": false, \"bwa_index\": \"s3://example-bucket/dataset/sample_R1.fastq.gz\", \"skip_qc\": false, \"skip_multiqc\": false, \"skip_markduplicates\": false, \"keep_duplicates\": true, \"save_markduplicates_bam\": true, \"clip_r1\": 1, \"clip_r2\": 1, \"three_prime_clip_r1\": 1, \"three_prime_clip_r2\": 1, \"trim_nextseq\": 1, \"skip_trimming\": false, \"save_trimmed\": false, \"save_merged_fastq\": false, \"save_circle_map_intermediate\": false, \"save_circle_finder_intermediate\": false, \"save_unicycler_intermediate\": false, \"aa_data_repo\": \"s3://example-bucket/dataset/sample_R1.fastq.gz\", \"aa_cngain\": \"4.5\", \"mosek_license_dir\": \"s3://example-bucket/dataset/sample_R1.fastq.gz\", \"reference_build\": \"test\", \"cnvkit_cnn\": \"test\", \"custom_config_version\": \"master\", \"custom_config_base\": \"https://raw.githubusercontent.com/nf-core/configs/master\", \"config_profile_name\": \"test\", \"config_profile_description\": \"test\", \"config_profile_contact\": \"test\", \"config_profile_url\": \"test\", \"max_cpus\": 16, \"max_memory\": \"128.GB\", \"max_time\": \"240.h\", \"help\": true, \"version\": true, \"publish_dir_mode\": \"copy\", \"email_on_fail\": \"test\", \"plaintext_email\": true, \"max_multiqc_email_size\": \"25.MB\", \"monochrome_logs\": true, \"hook_url\": \"test\", \"multiqc_config\": \"s3://example-bucket/dataset/sample_R1.fastq.gz\", \"multiqc_logo\": \"test\", \"multiqc_methods_description\": \"test\", \"validate_params\": true, \"validationShowHiddenParams\": true, \"validationFailUnrecognisedParams\": true, \"validationLenientMode\": true}"
+    },
+    "scaffolding_reference": "scrnaseq/cellranger"
+  },
+  "generation": {
+    "agent_turns": null,
+    "cost_usd": null
+  },
+  "test_data": {
+    "source": {
+      "samplesheet_url": "https://raw.githubusercontent.com/nf-core/test-datasets/circdna/samplesheet/samplesheet.csv"
+    },
+    "cirro_dataset": {
+      "id": "77353401-fb1d-43b0-885f-5fa27b53c6cb",
+      "name": "nf-core/circdna test data (1.1.0)",
+      "url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/77353401-fb1d-43b0-885f-5fa27b53c6cb",
+      "files": [
+        {
+          "name": "data/circdna_1_R1.fastq.gz",
+          "size": "4.24 MB"
+        },
+        {
+          "name": "data/circdna_1_R2.fastq.gz",
+          "size": "4.31 MB"
+        },
+        {
+          "name": "data/circdna_2_R1.fastq.gz",
+          "size": "9.43 MB"
+        },
+        {
+          "name": "data/circdna_2_R2.fastq.gz",
+          "size": "9.59 MB"
+        },
+        {
+          "name": "data/circdna_3_R1.fastq.gz",
+          "size": "8.49 MB"
+        },
+        {
+          "name": "data/circdna_3_R2.fastq.gz",
+          "size": "8.64 MB"
+        }
+      ]
+    }
+  },
+  "cirro": {
+    "process_id": "nf-circdna-1-1-0",
+    "data_type": "nf-core/circdna",
+    "parent_process_ids": [
+      "custom_dataset"
+    ],
+    "run": null
+  },
+  "bundle": {
+    "repo": "CirroBio/nf-core-onboarding",
+    "folder": "nf-core/circdna/1.1.0",
+    "files": [
+      "process-form.json",
+      "process-input.json",
+      "process-definition.json",
+      "process-output.json",
+      "process-compute.config",
+      "preprocess.py"
+    ],
+    "git_sha": "a8f3de3b83378ec10794ceb8049c8451bcdda9cb"
+  }
+}

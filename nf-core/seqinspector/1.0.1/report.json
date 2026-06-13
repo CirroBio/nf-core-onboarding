@@ -1,0 +1,53 @@
+{
+  "pipeline": "nf-core/seqinspector",
+  "version": "1.0.1",
+  "validated_at": "2026-06-13T20:50:12Z",
+  "validation": {
+    "overall": "PASS",
+    "oracle_wall_seconds": 1.2,
+    "tracks": {
+      "form_schema": "PASS",
+      "required_reachable": "PASS",
+      "paths_resolve": "PASS",
+      "preprocess_runs": "PASS"
+    },
+    "details": {
+      "form_schema": "valid JSON Schema",
+      "required_reachable": "all required params mapped",
+      "paths_resolve": "all mappings resolve",
+      "preprocess_runs": "2026-06-13 13:50:08,489 WARNING  [PreprocessDataset] Pivot column not found, grouping by sample instead."
+    },
+    "scaffolding_reference": "scrnaseq/cellranger"
+  },
+  "generation": {
+    "agent_turns": 83,
+    "cost_usd": "0.72"
+  },
+  "test_data": {
+    "source": {
+      "samplesheet_url": null
+    },
+    "cirro_dataset": null
+  },
+  "cirro": {
+    "process_id": "nf-seqinspector-1-0-1",
+    "data_type": "nf-core/seqinspector",
+    "parent_process_ids": [
+      "custom_dataset"
+    ],
+    "run": null
+  },
+  "bundle": {
+    "repo": "CirroBio/nf-core-onboarding",
+    "folder": "nf-core/seqinspector/1.0.1",
+    "files": [
+      "process-form.json",
+      "process-input.json",
+      "process-definition.json",
+      "process-output.json",
+      "process-compute.config",
+      "preprocess.py"
+    ],
+    "git_sha": "b0a3f058183b74826a4f05e0a27566ea43ed5d26"
+  }
+}

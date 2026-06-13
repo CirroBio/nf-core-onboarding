@@ -1,0 +1,70 @@
+{
+  "pipeline": "nf-core/callingcards",
+  "version": "1.0.0",
+  "validated_at": "2026-06-13T20:50:31Z",
+  "validation": {
+    "overall": "PASS",
+    "oracle_wall_seconds": 1.7,
+    "tracks": {
+      "form_schema": "PASS",
+      "required_reachable": "PASS",
+      "paths_resolve": "PASS",
+      "preprocess_runs": "PASS"
+    },
+    "details": {
+      "form_schema": "valid JSON Schema",
+      "required_reachable": "all required params mapped",
+      "paths_resolve": "all mappings resolve"
+    },
+    "scaffolding_reference": "scrnaseq/cellranger"
+  },
+  "generation": {
+    "agent_turns": null,
+    "cost_usd": null
+  },
+  "test_data": {
+    "source": {
+      "samplesheet_url": "https://raw.githubusercontent.com/cmatKhan/test-datasets/callingcards/yeast/samplesheet.csv"
+    },
+    "cirro_dataset": {
+      "id": "baddcfa6-35f4-429e-a4c2-2a90e9321ead",
+      "name": "nf-core/callingcards test data (1.0.0)",
+      "url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/baddcfa6-35f4-429e-a4c2-2a90e9321ead",
+      "files": [
+        {
+          "name": "data/run_6177_barcode_details.json",
+          "size": "1.56 KB"
+        },
+        {
+          "name": "data/run_6177_sample_R1.fastq.gz",
+          "size": "58.95 KB"
+        },
+        {
+          "name": "data/run_6177_sample_R2.fastq.gz",
+          "size": "65.01 KB"
+        }
+      ]
+    }
+  },
+  "cirro": {
+    "process_id": "nf-callingcards-1-0-0",
+    "data_type": "nf-core/callingcards",
+    "parent_process_ids": [
+      "custom_dataset"
+    ],
+    "run": null
+  },
+  "bundle": {
+    "repo": "CirroBio/nf-core-onboarding",
+    "folder": "nf-core/callingcards/1.0.0",
+    "files": [
+      "process-form.json",
+      "process-input.json",
+      "process-definition.json",
+      "process-output.json",
+      "process-compute.config",
+      "preprocess.py"
+    ],
+    "git_sha": "a8f3de3b83378ec10794ceb8049c8451bcdda9cb"
+  }
+}

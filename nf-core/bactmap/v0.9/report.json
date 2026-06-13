@@ -1,0 +1,75 @@
+{
+  "pipeline": "nf-core/bactmap",
+  "version": "v0.9",
+  "validated_at": "2026-06-13T20:50:23Z",
+  "validation": {
+    "overall": "PASS",
+    "oracle_wall_seconds": 1.6,
+    "tracks": {
+      "form_schema": "PASS",
+      "required_reachable": "PASS",
+      "paths_resolve": "PASS",
+      "preprocess_runs": "PASS"
+    },
+    "details": {
+      "form_schema": "valid JSON Schema",
+      "required_reachable": "all required params mapped",
+      "paths_resolve": "all mappings resolve",
+      "preprocess_runs": "2026-06-13 13:50:18,880 INFO     [PreprocessDataset] {'input': 'test', 'outdir': './results', 'email': 'test', 'reference': 'test', 'trim': True, 'save_trimmed_fail': True, 'adapter_file': '${baseDir}/assets/adapters.fas', 'subsampling_off': True, 'subsampling_depth_cutoff': 100, 'genome_size': 'test', 'remove_recombination': True, 'non_GATC_threshold': 0.5, 'rapidnj': True, 'fasttree': True, 'iqtree': True, 'raxmlng': True, 'help': True, 'publish_dir_mode': 'copy', 'email_on_fail': 'test', 'plaintext_email': True, 'monochrome_logs': True, 'tracedir': '${params.outdir}/pipeline_info', 'singularity_pull_docker_container': True, 'max_multiqc_email_size': '25.MB', 'skip_multiqc': True, 'multiqc_config': 'test', 'multiqc_title': 'test', 'enable_conda': True, 'validate_params': True, 'show_hidden_params': True, 'max_cpus': 4, 'max_memory': '16.GB', 'max_time': '240.h', 'custom_config_version': 'master', 'custom_config_base': 'https://raw.githubusercontent.com/nf-core/configs/master', 'hostnames': 'test', 'config_profile_description': 'test', 'config_profile_contact': 'test', 'config_profile_url': 'test'}"
+    },
+    "scaffolding_reference": "scrnaseq/cellranger"
+  },
+  "generation": {
+    "agent_turns": null,
+    "cost_usd": null
+  },
+  "test_data": {
+    "source": {
+      "samplesheet_url": "https://raw.githubusercontent.com/nf-core/test-datasets/bactmap/samplesheet.csv"
+    },
+    "cirro_dataset": {
+      "id": "ba8d7dbc-97e5-43a6-8267-4fb6d1770a9c",
+      "name": "nf-core/bactmap test data (v0.9)",
+      "url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/ba8d7dbc-97e5-43a6-8267-4fb6d1770a9c",
+      "files": [
+        {
+          "name": "data/test1_1.fastq.gz",
+          "size": "3.17 MB"
+        },
+        {
+          "name": "data/test1_2.fastq.gz",
+          "size": "3.24 MB"
+        },
+        {
+          "name": "data/test2_1.fastq.gz",
+          "size": "1.53 MB"
+        },
+        {
+          "name": "data/test2_2.fastq.gz",
+          "size": "1.72 MB"
+        }
+      ]
+    }
+  },
+  "cirro": {
+    "process_id": "nf-bactmap-v0-9",
+    "data_type": "nf-core/bactmap",
+    "parent_process_ids": [
+      "custom_dataset"
+    ],
+    "run": null
+  },
+  "bundle": {
+    "repo": "CirroBio/nf-core-onboarding",
+    "folder": "nf-core/bactmap/v0.9",
+    "files": [
+      "process-form.json",
+      "process-input.json",
+      "process-definition.json",
+      "process-output.json",
+      "process-compute.config",
+      "preprocess.py"
+    ],
+    "git_sha": "a8f3de3b83378ec10794ceb8049c8451bcdda9cb"
+  }
+}

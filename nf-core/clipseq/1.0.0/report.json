@@ -1,0 +1,67 @@
+{
+  "pipeline": "nf-core/clipseq",
+  "version": "1.0.0",
+  "validated_at": "2026-06-13T20:50:38Z",
+  "validation": {
+    "overall": "PASS",
+    "oracle_wall_seconds": 1.7,
+    "tracks": {
+      "form_schema": "PASS",
+      "required_reachable": "PASS",
+      "paths_resolve": "PASS",
+      "preprocess_runs": "PASS"
+    },
+    "details": {
+      "form_schema": "valid JSON Schema",
+      "required_reachable": "all required params mapped",
+      "paths_resolve": "all mappings resolve",
+      "preprocess_runs": "2026-06-13 13:50:36,934 INFO     [PreprocessDataset] Saving parameters"
+    },
+    "scaffolding_reference": "scrnaseq/cellranger"
+  },
+  "generation": {
+    "agent_turns": null,
+    "cost_usd": null
+  },
+  "test_data": {
+    "source": {
+      "samplesheet_url": "https://raw.githubusercontent.com/nf-core/test-datasets/clipseq/metadata.csv"
+    },
+    "cirro_dataset": {
+      "id": "af52bd98-57cb-4be4-8214-841fb52bb1af",
+      "name": "nf-core/clipseq test data (1.0.0)",
+      "url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/af52bd98-57cb-4be4-8214-841fb52bb1af",
+      "files": [
+        {
+          "name": "data/prpf8-hela-eif4a3-sirna-20190611-ju-2_trimmed_chr20_0_64444167.fq.gz",
+          "size": "1015.88 KB"
+        },
+        {
+          "name": "data/prpf8-hela-eif4a3-sirna-20190611-ju_trimmed_chr20_0_64444167.fq.gz",
+          "size": "738.63 KB"
+        }
+      ]
+    }
+  },
+  "cirro": {
+    "process_id": "nf-clipseq-1-0-0",
+    "data_type": "nf-core/clipseq",
+    "parent_process_ids": [
+      "custom_dataset"
+    ],
+    "run": null
+  },
+  "bundle": {
+    "repo": "CirroBio/nf-core-onboarding",
+    "folder": "nf-core/clipseq/1.0.0",
+    "files": [
+      "process-form.json",
+      "process-input.json",
+      "process-definition.json",
+      "process-output.json",
+      "process-compute.config",
+      "preprocess.py"
+    ],
+    "git_sha": "a8f3de3b83378ec10794ceb8049c8451bcdda9cb"
+  }
+}

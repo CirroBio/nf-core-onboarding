@@ -1,0 +1,74 @@
+{
+  "pipeline": "nf-core/demo",
+  "version": "1.1.0",
+  "validated_at": "2026-06-13T20:50:07Z",
+  "validation": {
+    "overall": "PASS",
+    "oracle_wall_seconds": 1.6,
+    "tracks": {
+      "form_schema": "PASS",
+      "required_reachable": "PASS",
+      "paths_resolve": "PASS",
+      "preprocess_runs": "PASS"
+    },
+    "details": {
+      "form_schema": "valid JSON Schema",
+      "required_reachable": "all required params mapped",
+      "paths_resolve": "all mappings resolve"
+    },
+    "scaffolding_reference": "scrnaseq/cellranger"
+  },
+  "generation": {
+    "agent_turns": 46,
+    "cost_usd": "1.24"
+  },
+  "test_data": {
+    "source": {
+      "samplesheet_url": "https://raw.githubusercontent.com/nf-core/test-datasets/viralrecon/samplesheet/samplesheet_test_illumina_amplicon.csv"
+    },
+    "cirro_dataset": {
+      "id": "22224a22-cccb-47ac-afbf-baf8642a7824",
+      "name": "nf-core/demo test data (1.1.0)",
+      "url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/22224a22-cccb-47ac-afbf-baf8642a7824",
+      "files": [
+        {
+          "name": "data/sample1_R1.fastq.gz",
+          "size": "3.20 MB"
+        },
+        {
+          "name": "data/sample1_R2.fastq.gz",
+          "size": "3.88 MB"
+        },
+        {
+          "name": "data/sample2_R1.fastq.gz",
+          "size": "2.33 MB"
+        },
+        {
+          "name": "data/sample2_R2.fastq.gz",
+          "size": "2.81 MB"
+        }
+      ]
+    }
+  },
+  "cirro": {
+    "process_id": "nf-demo-1-1-0",
+    "data_type": "nf-core/demo",
+    "parent_process_ids": [
+      "custom_dataset"
+    ],
+    "run": null
+  },
+  "bundle": {
+    "repo": "CirroBio/nf-core-onboarding",
+    "folder": "nf-core/demo/1.1.0",
+    "files": [
+      "process-form.json",
+      "process-input.json",
+      "process-definition.json",
+      "process-output.json",
+      "process-compute.config",
+      "preprocess.py"
+    ],
+    "git_sha": "b0a3f058183b74826a4f05e0a27566ea43ed5d26"
+  }
+}

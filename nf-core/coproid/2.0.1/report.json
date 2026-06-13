@@ -1,0 +1,74 @@
+{
+  "pipeline": "nf-core/coproid",
+  "version": "2.0.1",
+  "validated_at": "2026-06-13T20:50:42Z",
+  "validation": {
+    "overall": "PASS",
+    "oracle_wall_seconds": 2.0,
+    "tracks": {
+      "form_schema": "PASS",
+      "required_reachable": "PASS",
+      "paths_resolve": "PASS",
+      "preprocess_runs": "PASS"
+    },
+    "details": {
+      "form_schema": "valid JSON Schema",
+      "required_reachable": "all required params mapped",
+      "paths_resolve": "all mappings resolve"
+    },
+    "scaffolding_reference": "scrnaseq/cellranger"
+  },
+  "generation": {
+    "agent_turns": null,
+    "cost_usd": null
+  },
+  "test_data": {
+    "source": {
+      "samplesheet_url": "https://github.com/nf-core/test-datasets/raw/coproid/reads/samplesheet.csv"
+    },
+    "cirro_dataset": {
+      "id": "fb7751fc-edb4-4608-a12e-c11bac5d258e",
+      "name": "nf-core/coproid test data (2.0.1)",
+      "url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/fb7751fc-edb4-4608-a12e-c11bac5d258e",
+      "files": [
+        {
+          "name": "data/metagenome.1.fastq.gz",
+          "size": "2.88 MB"
+        },
+        {
+          "name": "data/metagenome.2.fastq.gz",
+          "size": "2.88 MB"
+        },
+        {
+          "name": "data/metagenomebis.1.fastq.gz",
+          "size": "5.34 MB"
+        },
+        {
+          "name": "data/metagenomebis.2.fastq.gz",
+          "size": "5.34 MB"
+        }
+      ]
+    }
+  },
+  "cirro": {
+    "process_id": "nf-coproid-2-0-1",
+    "data_type": "nf-core/coproid",
+    "parent_process_ids": [
+      "custom_dataset"
+    ],
+    "run": null
+  },
+  "bundle": {
+    "repo": "CirroBio/nf-core-onboarding",
+    "folder": "nf-core/coproid/2.0.1",
+    "files": [
+      "process-form.json",
+      "process-input.json",
+      "process-definition.json",
+      "process-output.json",
+      "process-compute.config",
+      "preprocess.py"
+    ],
+    "git_sha": "a8f3de3b83378ec10794ceb8049c8451bcdda9cb"
+  }
+}

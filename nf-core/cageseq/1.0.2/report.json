@@ -1,0 +1,53 @@
+{
+  "pipeline": "nf-core/cageseq",
+  "version": "1.0.2",
+  "validated_at": "2026-06-13T20:50:28Z",
+  "validation": {
+    "overall": "PASS",
+    "oracle_wall_seconds": 1.2,
+    "tracks": {
+      "form_schema": "PASS",
+      "required_reachable": "PASS",
+      "paths_resolve": "PASS",
+      "preprocess_runs": "PASS"
+    },
+    "details": {
+      "form_schema": "valid JSON Schema",
+      "required_reachable": "all required params mapped",
+      "paths_resolve": "all mappings resolve",
+      "preprocess_runs": "2026-06-13 13:50:24,414 WARNING  [PreprocessDataset] Pivot column not found, grouping by sample instead."
+    },
+    "scaffolding_reference": "scrnaseq/cellranger"
+  },
+  "generation": {
+    "agent_turns": null,
+    "cost_usd": null
+  },
+  "test_data": {
+    "source": {
+      "samplesheet_url": null
+    },
+    "cirro_dataset": null
+  },
+  "cirro": {
+    "process_id": "nf-cageseq-1-0-2",
+    "data_type": "nf-core/cageseq",
+    "parent_process_ids": [
+      "custom_dataset"
+    ],
+    "run": null
+  },
+  "bundle": {
+    "repo": "CirroBio/nf-core-onboarding",
+    "folder": "nf-core/cageseq/1.0.2",
+    "files": [
+      "process-form.json",
+      "process-input.json",
+      "process-definition.json",
+      "process-output.json",
+      "process-compute.config",
+      "preprocess.py"
+    ],
+    "git_sha": "a8f3de3b83378ec10794ceb8049c8451bcdda9cb"
+  }
+}

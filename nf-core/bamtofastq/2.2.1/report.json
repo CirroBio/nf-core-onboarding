@@ -1,0 +1,74 @@
+{
+  "pipeline": "nf-core/bamtofastq",
+  "version": "2.2.1",
+  "validated_at": "2026-06-13T20:50:00Z",
+  "validation": {
+    "overall": "PASS",
+    "oracle_wall_seconds": 1.3,
+    "tracks": {
+      "form_schema": "PASS",
+      "required_reachable": "PASS",
+      "paths_resolve": "PASS",
+      "preprocess_runs": "PASS"
+    },
+    "details": {
+      "form_schema": "valid JSON Schema",
+      "required_reachable": "all required params mapped",
+      "paths_resolve": "all mappings resolve"
+    },
+    "scaffolding_reference": "scrnaseq/cellranger"
+  },
+  "generation": {
+    "agent_turns": null,
+    "cost_usd": null
+  },
+  "test_data": {
+    "source": {
+      "samplesheet_url": null
+    },
+    "cirro_dataset": {
+      "id": "0949489f-d613-4422-bf13-3703269aa378",
+      "name": "nf-core/bamtofastq test data (2.2.1)",
+      "url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/0949489f-d613-4422-bf13-3703269aa378",
+      "files": [
+        {
+          "name": "data/test.paired_end.sorted.bam",
+          "size": "175.34 KB"
+        },
+        {
+          "name": "data/test.paired_end.sorted.bam.bai",
+          "size": "96.00 B"
+        },
+        {
+          "name": "data/test2.paired_end.sorted.bam",
+          "size": "196.47 KB"
+        },
+        {
+          "name": "data/test2.paired_end.sorted.bam.bai",
+          "size": "96.00 B"
+        }
+      ]
+    }
+  },
+  "cirro": {
+    "process_id": "nf-bamtofastq-2-2-1",
+    "data_type": "nf-core/bamtofastq",
+    "parent_process_ids": [
+      "custom_dataset"
+    ],
+    "run": null
+  },
+  "bundle": {
+    "repo": "CirroBio/nf-core-onboarding",
+    "folder": "nf-core/bamtofastq/2.2.1",
+    "files": [
+      "process-form.json",
+      "process-input.json",
+      "process-definition.json",
+      "process-output.json",
+      "process-compute.config",
+      "preprocess.py"
+    ],
+    "git_sha": "b0a3f058183b74826a4f05e0a27566ea43ed5d26"
+  }
+}
