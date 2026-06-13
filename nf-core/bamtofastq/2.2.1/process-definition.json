@@ -4,7 +4,7 @@
     "single-cell-10X"
   ],
   "childProcessIds": [],
-  "dataType": "Single-Cell Data (GEX)",
+  "dataType": null,
   "name": "nf-core/bamtofastq",
   "desc": "Workflow converts one or multiple bam/cram files to fastq format",
   "executor": "NEXTFLOW",
