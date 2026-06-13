@@ -1,0 +1,30 @@
+{
+  "id": "nf-bactmap-v0-9",
+  "childProcessIds": [],
+  "name": "nf-core/bactmap",
+  "desc": "A mapping-based pipeline for creating a phylogeny from bacterial whole genome sequences",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "RNA Sequencing",
+  "documentationUrl": "https://nf-co.re/bactmap",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/bactmap",
+    "version": "v0.9"
+  },
+  "usesSampleSheet": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "process-input.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "formJson": "process-form.json",
+  "webOptimizationJson": "process-output.json",
+  "fileMappingRules": [],
+  "dataType": null
+}

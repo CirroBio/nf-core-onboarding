@@ -1,0 +1,31 @@
+{
+  "id": "nf-circdna-1-1-0",
+  "childProcessIds": [],
+  "name": "nf-core/circdna",
+  "desc": "Pipeline for the identification of circular DNAs",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "DNA Sequencing",
+  "documentationUrl": "https://nf-co.re/circdna",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/circdna",
+    "version": "1.1.0",
+    "executorVersion": "25.10.4"
+  },
+  "usesSampleSheet": true,
+  "fileMappingRules": [],
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "process-input.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "formJson": "process-form.json",
+  "webOptimizationJson": "process-output.json",
+  "dataType": null
+}

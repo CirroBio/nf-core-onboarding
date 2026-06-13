@@ -1,0 +1,154 @@
+{
+  "id": "nf-airrflow-5-1-0",
+  "childProcessIds": [],
+  "dataType": null,
+  "name": "nf-core/airrflow",
+  "desc": "B and T cell repertoire analysis pipeline with the Immcantation framework.",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "DNA Sequencing",
+  "documentationUrl": "https://nf-co.re/airrflow",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/airrflow",
+    "version": "5.1.0",
+    "executorVersion": "25.10.4"
+  },
+  "allowMultipleSources": true,
+  "usesSampleSheet": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "process-input.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "formJson": "process-form.json",
+  "webOptimizationJson": "process-output.json",
+  "fileMappingRules": [
+    {
+      "description": "clonal_analysis outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "clonal_analysis/clonal_assignment",
+          "description": "clonal_analysis",
+          "sampleMatchingPattern": "clonal_analysis/.*"
+        }
+      ]
+    },
+    {
+      "description": "fastp outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "fastp/Sample2",
+          "description": "fastp",
+          "sampleMatchingPattern": "fastp/.*"
+        }
+      ]
+    },
+    {
+      "description": "fastqc outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "fastqc/postassembly",
+          "description": "fastqc",
+          "sampleMatchingPattern": "fastqc/.*"
+        }
+      ]
+    },
+    {
+      "description": "multiqc outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "multiqc/multiqc_data",
+          "description": "multiqc",
+          "sampleMatchingPattern": "multiqc/.*"
+        }
+      ]
+    },
+    {
+      "description": "parsed_logs outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "parsed_logs/Table_all_details_assemble_mates.tsv",
+          "description": "parsed_logs",
+          "sampleMatchingPattern": "parsed_logs/.*"
+        }
+      ]
+    },
+    {
+      "description": "pipeline_info outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "pipeline_info/nf_core_airrflow_software_mqc_versions.yml",
+          "description": "pipeline_info",
+          "sampleMatchingPattern": "pipeline_info/.*"
+        }
+      ]
+    },
+    {
+      "description": "presto outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "presto/01-filterseq",
+          "description": "presto",
+          "sampleMatchingPattern": "presto/.*"
+        }
+      ]
+    },
+    {
+      "description": "qc-filtering outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "qc-filtering/bulk-qc-filtering",
+          "description": "qc-filtering",
+          "sampleMatchingPattern": "qc\\-filtering/.*"
+        }
+      ]
+    },
+    {
+      "description": "repertoire_comparison outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "repertoire_comparison/Sequence_numbers_summary",
+          "description": "repertoire_comparison",
+          "sampleMatchingPattern": "repertoire_comparison/.*"
+        }
+      ]
+    },
+    {
+      "description": "report_file_size outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "report_file_size/file_size_report",
+          "description": "report_file_size",
+          "sampleMatchingPattern": "report_file_size/.*"
+        }
+      ]
+    },
+    {
+      "description": "vdj_annotation outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "vdj_annotation/01-assign-genes",
+          "description": "vdj_annotation",
+          "sampleMatchingPattern": "vdj_annotation/.*"
+        }
+      ]
+    }
+  ]
+}

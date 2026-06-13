@@ -1,0 +1,34 @@
+{
+  "id": "nf-callingcards-1-0-0",
+  "parentProcessIds": [
+    "single-cell-10X"
+  ],
+  "childProcessIds": [],
+  "dataType": null,
+  "name": "nf-core/callingcards",
+  "desc": "An automated processing pipeline for mammalian bulk calling cards experiments",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "Single-Cell Analysis",
+  "documentationUrl": "https://nf-co.re/callingcards",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/callingcards",
+    "version": "1.0.0"
+  },
+  "usesSampleSheet": true,
+  "allowMultipleSources": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "process-input.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "formJson": "process-form.json",
+  "webOptimizationJson": "process-output.json",
+  "fileMappingRules": []
+}

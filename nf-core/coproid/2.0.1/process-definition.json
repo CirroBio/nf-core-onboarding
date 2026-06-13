@@ -1,0 +1,156 @@
+{
+  "id": "nf-coproid-2-0-1",
+  "parentProcessIds": [
+    "single-cell-10X"
+  ],
+  "childProcessIds": [],
+  "dataType": null,
+  "name": "nf-core/coproid",
+  "desc": " COPROlite host IDentification ",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "Single-Cell Analysis",
+  "documentationUrl": "https://nf-co.re/coproid",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/coproid",
+    "version": "2.0.1"
+  },
+  "usesSampleSheet": true,
+  "allowMultipleSources": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "process-input.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "formJson": "process-form.json",
+  "webOptimizationJson": "process-output.json",
+  "fileMappingRules": [
+    {
+      "description": "bowtie2 outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "bowtie2/SAMPLE_BSUB-Bacillus_subtilis.bam",
+          "description": "bowtie2",
+          "sampleMatchingPattern": "bowtie2/.*"
+        }
+      ]
+    },
+    {
+      "description": "coproid_report outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "coproid_report/_extensions",
+          "description": "coproid_report",
+          "sampleMatchingPattern": "coproid_report/.*"
+        }
+      ]
+    },
+    {
+      "description": "damageprofiler outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "damageprofiler/SAMPLE_BSUB-Bacillus_subtilis",
+          "description": "damageprofiler",
+          "sampleMatchingPattern": "damageprofiler/.*"
+        }
+      ]
+    },
+    {
+      "description": "fastp outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "fastp/SAMPLE_BSUB.fastp.html",
+          "description": "fastp",
+          "sampleMatchingPattern": "fastp/.*"
+        }
+      ]
+    },
+    {
+      "description": "fastqc outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "fastqc/SAMPLE_BSUB_1_fastqc.html",
+          "description": "fastqc",
+          "sampleMatchingPattern": "fastqc/.*"
+        }
+      ]
+    },
+    {
+      "description": "kraken2 outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "kraken2/SAMPLE_BSUB.kmer_kraken_parsed.csv",
+          "description": "kraken2",
+          "sampleMatchingPattern": "kraken2/.*"
+        }
+      ]
+    },
+    {
+      "description": "multiqc outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "multiqc/coproid_multiqc_report.html",
+          "description": "multiqc",
+          "sampleMatchingPattern": "multiqc/.*"
+        }
+      ]
+    },
+    {
+      "description": "pipeline_info outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "pipeline_info/nf_core_coproid_software_mqc_versions.yml",
+          "description": "pipeline_info",
+          "sampleMatchingPattern": "pipeline_info/.*"
+        }
+      ]
+    },
+    {
+      "description": "pydamage outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "pydamage/coproid.pydamage_merged_report.csv",
+          "description": "pydamage",
+          "sampleMatchingPattern": "pydamage/.*"
+        }
+      ]
+    },
+    {
+      "description": "sam2lca outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "sam2lca/SAMPLE_BSUB.sam2lca.csv",
+          "description": "sam2lca",
+          "sampleMatchingPattern": "sam2lca/.*"
+        }
+      ]
+    },
+    {
+      "description": "sourcepredict outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "sourcepredict/coproid.embedding.sourcepredict.csv",
+          "description": "sourcepredict",
+          "sampleMatchingPattern": "sourcepredict/.*"
+        }
+      ]
+    }
+  ]
+}
