@@ -2,7 +2,7 @@
 
 Cirro pipeline configurations for onboarding [nf-core](https://nf-co.re) pipelines into the Cirro **development** account.
 
-> **Development account only.** This repository is kept separate from the production pipeline catalog ([CirroBio/Cirro-pipelines](https://github.com/CirroBio/Cirro-pipelines)) and never modifies it. Configurations are validated against the development tenant here; promotion to production happens through a reviewed pull request to the production repository.
+> **Development account only.** This repository is kept separate from the production pipeline catalog ([CirroBio/Cirro-pipelines](https://github.com/CirroBio/Cirro-pipelines)).
 
 ## Layout
 
