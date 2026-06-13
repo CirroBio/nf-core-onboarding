@@ -52,7 +52,16 @@
     "parent_process_ids": [
       "custom_dataset"
     ],
-    "run": null
+    "run": {
+      "run_dataset_id": "cdcd0766-57ea-49a4-9d23-0cef8a6d458b",
+      "terminal_status": "FAILED",
+      "duration_seconds": 281,
+      "output_dataset_url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/cdcd0766-57ea-49a4-9d23-0cef8a6d458b",
+      "failed_task": "None",
+      "submitted_at": "2026-06-13T21:04:23Z",
+      "params": {},
+      "error_summary": "(see Cirro logs)"
+    }
   },
   "bundle": {
     "repo": "CirroBio/nf-core-onboarding",

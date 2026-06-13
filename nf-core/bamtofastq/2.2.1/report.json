@@ -56,7 +56,16 @@
     "parent_process_ids": [
       "custom_dataset"
     ],
-    "run": null
+    "run": {
+      "run_dataset_id": "bda00b7a-d7fd-4c8a-ae5c-890e643e89a5",
+      "terminal_status": "FAILED",
+      "duration_seconds": 302,
+      "output_dataset_url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/bda00b7a-d7fd-4c8a-ae5c-890e643e89a5",
+      "failed_task": "None",
+      "submitted_at": "2026-06-13T21:04:25Z",
+      "params": {},
+      "error_summary": "ERROR ~ Plugin nf-schema with version @2.6.1 does not exist in the repository"
+    }
   },
   "bundle": {
     "repo": "CirroBio/nf-core-onboarding",
