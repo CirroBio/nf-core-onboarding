@@ -1,4 +1,4 @@
-# nf-core-onboarding
+# Pipeline Development
 
 Cirro pipeline configurations for onboarding [nf-core](https://nf-co.re) pipelines into the Cirro **development** account.
 
