@@ -1466,7 +1466,7 @@
             "description": "Sample metadata that is included in the multiqc report",
             "help_text": "Optional tab/semicolon/comma separated file with extra per-sample annotations (e.g. collection_date, host, location). Columns are merged into MultiQC. Filename must end with .csv or .tsv.",
             "pattern": "^\\S+\\.[tc]sv$",
-            "default": "params.pipelines_testdata_base_path + 'viralmetagenome/samplesheets/metadata_test.tsv'"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/viralmetagenome/samplesheets/metadata_test.tsv"
           },
           "email": {
             "type": "string",
@@ -2316,7 +2316,7 @@
             "fa_icon": "far fa-file-alt",
             "schema": "assets/schemas/mapping_constraints.json",
             "help_text": "Perform a separate standard read mapping + consensus calling analysis to create a reference-based consensus from the provided reference sequence(s). Optionally the best reference is selected using Mash.",
-            "default": "params.pipelines_testdata_base_path + 'viralmetagenome/samplesheets/mapping_constraints.csv'"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/viralmetagenome/samplesheets/mapping_constraints.csv"
           },
           "deduplicate": {
             "type": "boolean",
