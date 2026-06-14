@@ -4,7 +4,7 @@ Generated from live runs as of 2026-06-14. Cirro development tenant (project `28
 
 Each pipeline's Cirro configuration is built from the published nf-core pipeline definition, registered as a runnable process, and executed against the pipeline's own `-profile test` data on the Cirro tenant. The Nextflow build is pinned per the pipeline's `manifest.nextflowVersion`. Outcomes are triaged: `COMPLETED` ran to success; `TEST-DATA-GAP` = the pipeline's test inputs were unavailable; `PIPELINE-BUG`/`INFRA` are outside the onboarding layer; `HARNESS-GAP` = addressable in the onboarding configuration.
 
-**3 of 17 executed pipelines ran to COMPLETED** on the pipeline's own `-profile test` data. The rest are triaged below; the bucket names indicate where the onboarding layer can help (`HARNESS-GAP`) versus where the wall is the pipeline's test data or code (`TEST-DATA-GAP`/`PIPELINE-BUG`/`INFRA`).
+**3 of 12 executed pipelines ran to COMPLETED** on the pipeline's own `-profile test` data. The rest are triaged below; the bucket names indicate where the onboarding layer can help (`HARNESS-GAP`) versus where the wall is the pipeline's test data or code (`TEST-DATA-GAP`/`PIPELINE-BUG`/`INFRA`).
 
 | Pipeline | Version | Nextflow | Run start | Duration | Outcome |
 |---|---|---|---|---|---|
@@ -12,19 +12,14 @@ Each pipeline's Cirro configuration is built from the published nf-core pipeline
 | nf-core/smrnaseq | 2.3.1 | 25.04.8 | 2026-06-14 11:43 UTC | 21m31s | **COMPLETED** |
 | nf-core/viralrecon | 2.6.0 | 25.04.8 | 2026-06-14 03:42 UTC | 30m08s | **COMPLETED** |
 | nf-core/bactmap | 1.0.0 | 25.04.8 | 2026-06-14 14:44 UTC | 0m35s | **TEST-DATA-GAP** |
-| nf-core/bamtofastq | 2.2.1 | 25.10.4 | 2026-06-14 15:01 UTC | 9m12s | **PIPELINE-BUG** |
-| nf-core/callingcards | 1.0.0 | 25.04.8 | 2026-06-14 15:16 UTC | 0m49s | **HARNESS-GAP** |
+| nf-core/bamtofastq | 2.2.1 | 25.10.4 | 2026-06-14 12:29 UTC | 0m10s | **HARNESS-GAP** |
+| nf-core/callingcards | 1.0.0 | 25.04.8 | 2026-06-14 11:47 UTC | 0m56s | **HARNESS-GAP** |
 | nf-core/circdna | 1.1.0 | 25.04.8 | 2026-06-14 12:08 UTC | 16m42s | **INFRA** |
-| nf-core/coproid | 2.0.1 | 25.04.8 | 2026-06-14 15:17 UTC | 0m53s | **HARNESS-GAP** |
-| nf-core/denovotranscript | 1.2.1 | 25.04.8 | 2026-06-14 15:18 UTC | 0m49s | **UNKNOWN** |
+| nf-core/coproid | 2.0.1 | 25.04.8 | 2026-06-14 16:55 UTC | 7m56s | **PIPELINE-BUG** |
+| nf-core/denovotranscript | 1.2.1 | 25.04.8 | 2026-06-14 14:43 UTC | 0m50s | **UNKNOWN** |
 | nf-core/fastqrepair | 1.0.0 | 25.04.8 | 2026-06-14 04:13 UTC | 5m53s | **PIPELINE-BUG** |
-| nf-core/funcscan | 3.0.0 | 25.10.4 | 2026-06-14 15:18 UTC | 1m03s | **UNKNOWN** |
-| nf-core/hgtseq | 1.1.0 | 25.04.8 | 2026-06-14 15:07 UTC | 0m29s | **TEST-DATA-GAP** |
-| nf-core/magmap | 1.1.0 | 25.10.4 | 2026-06-14 15:18 UTC | 0m36s | **UNKNOWN** |
-| nf-core/metatdenovo | 1.3.0 | 25.10.4 | 2026-06-14 15:18 UTC | 0m33s | **UNKNOWN** |
-| nf-core/nanoseq | 3.1.0 | 25.04.8 | 2026-06-14 15:07 UTC | 5m34s | **PIPELINE-BUG** |
-| nf-core/scrnaseq | 4.1.0 | 25.04.8 | 2026-06-14 14:49 UTC | 0m30s | **UNKNOWN** |
-| nf-core/viralmetagenome | 1.1.2 | 25.04.8 | 2026-06-14 15:18 UTC | 0m42s | **UNKNOWN** |
+| nf-core/funcscan | 3.0.0 | 25.04.8 | 2026-06-14 16:57 UTC | 3m15s | **UNKNOWN** |
+| nf-core/metatdenovo | 1.3.0 | 25.10.4 | 2026-06-14 16:23 UTC | 6m42s | **PIPELINE-BUG** |
 
 ## Details
 ### nf-core/demo 1.1.0  (`nf-demo-1-1-0`)
@@ -61,22 +56,21 @@ Each pipeline's Cirro configuration is built from the published nf-core pipeline
 - Run id: `7c5841da-b298-4566-8ec1-b30551330dba`
 
 ### nf-core/bamtofastq 2.2.1  (`nf-bamtofastq-2-2-1`)
-- Outcome: **PIPELINE-BUG** — a workflow process failed (pipeline tool/code)
+- Outcome: **HARNESS-GAP** — preprocess: generated preprocess.py failed
 - Cirro run status: FAILED
 - Test data: nf-core/bamtofastq test data PE (2.2.1)
 - Nextflow build: 25.10.4
-- Run started: 2026-06-14 15:01 UTC  ·  Duration: 9m12s
-- First error: `ERROR ~ Error executing process > 'NFCORE_BAMTOFASTQ:BAMTOFASTQ:PREPARE_INDICES:SAMTOOLS_FAIDX ([])'`
-- Run id: `1f9a2ce6-4bd4-4cdb-9254-9019f7af1913`
+- Run started: 2026-06-14 12:29 UTC  ·  Duration: 0m10s
+- Run id: `75b95634-ce6d-4e8d-914a-3abae1d39cf6`
 
 ### nf-core/callingcards 1.0.0  (`nf-callingcards-1-0-0`)
 - Outcome: **HARNESS-GAP** — samplesheet: generated sheet fails the pipeline's schema_input
 - Cirro run status: FAILED
 - Test data: nf-core/callingcards test data PE (1.0.0)
 - Nextflow build: 25.04.8
-- Run started: 2026-06-14 15:16 UTC  ·  Duration: 0m49s
+- Run started: 2026-06-14 11:47 UTC  ·  Duration: 0m56s
 - First error: `ERROR ~ ERROR: Validation of 'input' file failed!`
-- Run id: `d667bca1-4fd9-4fa5-ac91-136d627829f3`
+- Run id: `d9cf8347-2c9b-47c5-8cec-93df5a6a3126`
 
 ### nf-core/circdna 1.1.0  (`nf-circdna-1-1-0`)
 - Outcome: **INFRA** — a process has no resolvable container / Batch job definition
@@ -88,22 +82,22 @@ Each pipeline's Cirro configuration is built from the published nf-core pipeline
 - Run id: `90d47234-21f4-4b93-83ed-5eaba95d5829`
 
 ### nf-core/coproid 2.0.1  (`nf-coproid-2-0-1`)
-- Outcome: **HARNESS-GAP** — params: process-input.json mapping / run params
+- Outcome: **PIPELINE-BUG** — a workflow process failed (pipeline tool/code)
 - Cirro run status: FAILED
 - Test data: nf-core/coproid test data PE (2.0.1)
 - Nextflow build: 25.04.8
-- Run started: 2026-06-14 15:17 UTC  ·  Duration: 0m53s
-- First error: `ERROR ~ Validation of pipeline parameters failed!`
-- Run id: `2e469405-afad-4581-875f-fee6344c5af3`
+- Run started: 2026-06-14 16:55 UTC  ·  Duration: 7m56s
+- First error: `ERROR ~ Error executing process > 'NFCORE_COPROID:COPROID:QUARTO_REPORTING:QUARTONOTEBOOK (quarto_notebook)'`
+- Run id: `0e32672e-9c06-4b9e-90c6-acc5282e7229`
 
 ### nf-core/denovotranscript 1.2.1  (`nf-denovotranscript-1-2-1`)
 - Outcome: **UNKNOWN** — failed with no recognized signature
 - Cirro run status: FAILED
 - Test data: nf-core/denovotranscript test data PE (1.2.1)
 - Nextflow build: 25.04.8
-- Run started: 2026-06-14 15:18 UTC  ·  Duration: 0m49s
+- Run started: 2026-06-14 14:43 UTC  ·  Duration: 0m50s
 - First error: `ERROR ~ Cannot invoke "java.nio.file.Path.getFileSystem()" because "path" is null`
-- Run id: `694b9ebd-fa85-4e3b-ae3b-20dbece70e79`
+- Run id: `c05a32e9-d779-4d27-9505-8a2669eac40e`
 
 ### nf-core/fastqrepair 1.0.0  (`nf-fastqrepair-1-0-0`)
 - Outcome: **PIPELINE-BUG** — a workflow process failed (pipeline tool/code)
@@ -118,61 +112,17 @@ Each pipeline's Cirro configuration is built from the published nf-core pipeline
 - Outcome: **UNKNOWN** — failed with no recognized signature
 - Cirro run status: FAILED
 - Test data: nf-core/funcscan test data PE (3.0.0)
-- Nextflow build: 25.10.4
-- Run started: 2026-06-14 15:18 UTC  ·  Duration: 1m03s
-- Run id: `9f9ec0e8-a3de-4719-bcb8-06a02a94bb8f`
-
-### nf-core/hgtseq 1.1.0  (`nf-hgtseq-1-1-0`)
-- Outcome: **TEST-DATA-GAP** — a referenced input/genome file could not be staged (stale test data?)
-- Cirro run status: FAILED
-- Test data: nf-core/hgtseq test data PE (1.1.0)
 - Nextflow build: 25.04.8
-- Run started: 2026-06-14 15:07 UTC  ·  Duration: 0m29s
-- First error: `ERROR ~ No such file or directory: /opt/work/9ef541bfd18710d609e533da06a37c5e/None`
-- Run id: `a4796210-3f7e-41f9-8c4d-e9ca36964278`
-
-### nf-core/magmap 1.1.0  (`nf-magmap-1-1-0`)
-- Outcome: **UNKNOWN** — failed with no recognized signature
-- Cirro run status: FAILED
-- Test data: nf-core/magmap test data PE (1.1.0)
-- Nextflow build: 25.10.4
-- Run started: 2026-06-14 15:18 UTC  ·  Duration: 0m36s
-- First error: `ERROR ~ Unknown config attribute `params.optical_duplicate_pixel_distance` -- check config file: /opt/work/38bd79be2471041602f64b20ce98acde/nextflow-override.config`
-- Run id: `41f72e0c-6206-4ae9-9779-52ff76239a28`
+- Run started: 2026-06-14 16:57 UTC  ·  Duration: 3m15s
+- First error: `ERROR ~ Unknown method invocation `multiply` on ConfigObject type`
+- Run id: `d6befa0d-a484-47d4-8bd5-7d2618c6d9e7`
 
 ### nf-core/metatdenovo 1.3.0  (`nf-metatdenovo-1-3-0`)
-- Outcome: **UNKNOWN** — failed with no recognized signature
+- Outcome: **PIPELINE-BUG** — a workflow process failed (pipeline tool/code)
 - Cirro run status: FAILED
 - Test data: nf-core/metatdenovo test data PE (1.3.0)
 - Nextflow build: 25.10.4
-- Run started: 2026-06-14 15:18 UTC  ·  Duration: 0m33s
-- First error: `ERROR ~ Unknown config attribute `params.optical_duplicate_pixel_distance` -- check config file: /opt/work/7c3251ae5ad5c03996a58981ca40c16a/nextflow-override.config`
-- Run id: `df8fdba3-1260-460c-be9c-19eec8a5f6a3`
-
-### nf-core/nanoseq 3.1.0  (`nf-nanoseq-3-1-0`)
-- Outcome: **PIPELINE-BUG** — a workflow process failed (pipeline tool/code)
-- Cirro run status: FAILED
-- Test data: nf-core/nanoseq test data PE (3.1.0)
-- Nextflow build: 25.04.8
-- Run started: 2026-06-14 15:07 UTC  ·  Duration: 5m34s
-- First error: `ERROR ~ Error executing process > 'NFCORE_NANOSEQ:NANOSEQ:INPUT_CHECK:SAMPLESHEET_CHECK (samplesheet.csv)'`
-- Run id: `403b3c57-edd9-48d8-8eb9-e105a12b7811`
-
-### nf-core/scrnaseq 4.1.0  (`nf-scrnaseq-4-1-0`)
-- Outcome: **UNKNOWN** — failed with no recognized signature
-- Cirro run status: FAILED
-- Test data: nf-core/scrnaseq test data PE (4.1.0)
-- Nextflow build: 25.04.8
-- Run started: 2026-06-14 14:49 UTC  ·  Duration: 0m30s
-- First error: `ERROR ~ Requests specifying Server Side Encryption with AWS KMS managed keys require AWS Signature Version 4. (Service: Amazon S3; Status Code: 400; Error Code: InvalidArgument; Request ID: GCYH25P9PZ`
-- Run id: `367dfacc-47e9-4292-8784-9f008bb7da3c`
-
-### nf-core/viralmetagenome 1.1.2  (`nf-viralmetagenome-1-1-2`)
-- Outcome: **UNKNOWN** — failed with no recognized signature
-- Cirro run status: FAILED
-- Test data: nf-core/viralmetagenome test data PE (1.1.2)
-- Nextflow build: 25.04.8
-- Run started: 2026-06-14 15:18 UTC  ·  Duration: 0m42s
-- First error: `ERROR ~ Plugin nf-schema with version @2.7.2 does not exist in the repository`
-- Run id: `1c17bafe-d2fd-4b2a-bc41-972e830db96e`
+- Run started: 2026-06-14 16:23 UTC  ·  Duration: 6m42s
+- First error: `ERROR ~ Error executing process > 'NFCORE_METATDENOVO:METATDENOVO:PRODIGAL:PRODIGAL_MODULE (megahit.prodigal)'`
+- Run id: `b00a2f89-eca9-4414-80b2-ad435dc10d39`
 
