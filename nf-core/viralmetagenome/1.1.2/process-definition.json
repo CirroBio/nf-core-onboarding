@@ -1,0 +1,131 @@
+{
+  "id": "process-nf-core-viralmetagenome-1_1_2",
+  "childProcessIds": [],
+  "dataType": null,
+  "name": "nf-core/viralmetagenome",
+  "desc": "A bioinformatics best-practice analysis pipeline for untargeted viral genome reconstruction and to identify intra-host variants from metagenomic sequencing data.",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "RNA Sequencing",
+  "documentationUrl": "https://nf-co.re/viralmetagenome",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/viralmetagenome",
+    "version": "1.1.2"
+  },
+  "allowMultipleSources": true,
+  "usesSampleSheet": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "process-input.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "formJson": "process-form.json",
+  "webOptimizationJson": "process-output.json",
+  "fileMappingRules": [
+    {
+      "description": "(bcftools) transistions outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "(bcftools) transistions/transversions ratio",
+          "description": "(bcftools) transistions",
+          "sampleMatchingPattern": "\\(bcftools\\)\\ transistions/.*"
+        }
+      ]
+    },
+    {
+      "description": "(bcftools) transition outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "(bcftools) transition/transversion in 1st alternative",
+          "description": "(bcftools) transition",
+          "sampleMatchingPattern": "\\(bcftools\\)\\ transition/.*"
+        }
+      ]
+    },
+    {
+      "description": "assembly outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "assembly/assemblers",
+          "description": "assembly",
+          "sampleMatchingPattern": "assembly/.*"
+        }
+      ]
+    },
+    {
+      "description": "consensus outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "consensus/mask",
+          "description": "consensus",
+          "sampleMatchingPattern": "consensus/.*"
+        }
+      ]
+    },
+    {
+      "description": "multiqc outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "multiqc/multiqc_data",
+          "description": "multiqc",
+          "sampleMatchingPattern": "multiqc/.*"
+        }
+      ]
+    },
+    {
+      "description": "overview-tables outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "overview-tables/contigs_overview-with-iterations.tsv",
+          "description": "overview-tables",
+          "sampleMatchingPattern": "overview\\-tables/.*"
+        }
+      ]
+    },
+    {
+      "description": "pipeline_info outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "pipeline_info/nf_core_viralmetagenome_software_mqc_versions.yml",
+          "description": "pipeline_info",
+          "sampleMatchingPattern": "pipeline_info/.*"
+        }
+      ]
+    },
+    {
+      "description": "preprocessing outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "preprocessing/fastp",
+          "description": "preprocessing",
+          "sampleMatchingPattern": "preprocessing/.*"
+        }
+      ]
+    },
+    {
+      "description": "variants outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "variants/annotation",
+          "description": "variants",
+          "sampleMatchingPattern": "variants/.*"
+        }
+      ]
+    }
+  ]
+}
