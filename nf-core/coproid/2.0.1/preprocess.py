@@ -1,39 +1,20 @@
-import pandas as pd
-
+#!/usr/bin/env python3
+"""Cirro preprocess: build the workflow input samplesheet from the dataset."""
 from cirro.helpers.preprocess_dataset import PreprocessDataset
 
 
-def make_samplesheet(ds: PreprocessDataset) -> pd.DataFrame:
-    """
-    Build the nf-core/coproid input samplesheet (sample,fastq_1,fastq_2)
-    from uploaded paired-end FASTQ files.
-
-    coproid expects a 3-column CSV:
-        sample  - unique sample identifier
-        fastq_1 - path to R1 (forward) FASTQ (gzipped)
-        fastq_2 - path to R2 (reverse) FASTQ (gzipped); empty string for SE
-    """
-    samplesheet = ds.pivot_samplesheet(
-        metadata_columns=[],
-    )
-
-    # pivot_samplesheet names the read columns read1 / read2;
-    # coproid expects fastq_1 / fastq_2.
-    samplesheet = samplesheet.rename(
-        columns={
-            "read1": "fastq_1",
-            "read2": "fastq_2",
-        }
-    )
-
-    # Ensure required columns are present; fill missing fastq_2 for SE data.
-    if "fastq_2" not in samplesheet.columns:
-        samplesheet["fastq_2"] = ""
-
-    return samplesheet[["sample", "fastq_1", "fastq_2"]]
+def main() -> None:
+    ds = PreprocessDataset.from_running()
+    # Structured dataset: pivot the samplesheet (long file rows -> wide form).
+    # Cirro names the columns 'sampleName' + one per read position 'R1'/'R2'
+    # (readType R = sequencing read, I = index); rename to the nf-core columns.
+    sheet = ds.pivot_samplesheet(metadata_columns=[])
+    sheet = sheet.rename(columns={"sampleName": "sample", "R1": "fastq_1", "R2": "fastq_2"})
+    if "fastq_2" not in sheet.columns:
+        sheet["fastq_2"] = ""
+    sheet[["sample", "fastq_1", "fastq_2"]].to_csv("samplesheet.csv", index=False)
+    ds.add_param("input", "samplesheet.csv")
 
 
 if __name__ == "__main__":
-    ds = PreprocessDataset.from_running()
-    samplesheet = make_samplesheet(ds)
-    samplesheet.to_csv("samplesheet.csv", index=False)
+    main()

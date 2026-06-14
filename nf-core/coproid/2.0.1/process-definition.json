@@ -1,5 +1,5 @@
 {
-  "id": "nf-coproid-2-0-1",
+  "id": "process-nf-core-coproid-2_0_1",
   "parentProcessIds": [
     "single-cell-10X"
   ],

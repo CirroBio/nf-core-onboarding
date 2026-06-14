@@ -337,7 +337,8 @@
             "schema": "assets/schema_genomes.json",
             "mimetype": "text/csv",
             "pattern": "^\\S+\\.csv$",
-            "description": "Path to comma-separated file containing information about the reference genomes."
+            "description": "Path to comma-separated file containing information about the reference genomes.",
+            "default": "https://github.com/nf-core/test-datasets/raw/coproid/genomes/genomesheet.csv"
           },
           "outdir": {
             "type": "string",
@@ -380,19 +381,22 @@
             "type": "string",
             "format": "file-path",
             "exists": true,
-            "description": "Path to a kraken2 database, can be a directory or *.tar.gz"
+            "description": "Path to a kraken2 database, can be a directory or *.tar.gz",
+            "default": "https://github.com/nf-core/test-datasets/raw/coproid/kraken.tar.gz"
           },
           "sp_sources": {
             "type": "string",
             "format": "file-path",
             "exists": true,
-            "description": "Sources TAXID count table in csv format for sourcepredict"
+            "description": "Sources TAXID count table in csv format for sourcepredict",
+            "default": "https://github.com/nf-core/test-datasets/raw/coproid/sourcepredict/test_sources.csv"
           },
           "sp_labels": {
             "type": "string",
             "format": "file-path",
             "exists": true,
-            "description": "Labels for the sources table in csv format for sourcepredict"
+            "description": "Labels for the sources table in csv format for sourcepredict",
+            "default": "https://github.com/nf-core/test-datasets/raw/coproid/sourcepredict/test_labels.csv"
           },
           "taxa_sqlite": {
             "type": "string",
@@ -466,13 +470,15 @@
             "type": "string",
             "description": "Institutional config name.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Test profile"
           },
           "config_profile_description": {
             "type": "string",
             "description": "Institutional config description.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Minimal test dataset to check pipeline function"
           },
           "config_profile_contact": {
             "type": "string",

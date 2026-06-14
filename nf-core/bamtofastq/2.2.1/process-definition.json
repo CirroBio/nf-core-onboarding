@@ -1,5 +1,5 @@
 {
-  "id": "nf-bamtofastq",
+  "id": "process-nf-core-bamtofastq-2_2_1",
   "parentProcessIds": [
     "single-cell-10X"
   ],
