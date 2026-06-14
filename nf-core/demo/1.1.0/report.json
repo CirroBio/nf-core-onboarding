@@ -1,7 +1,7 @@
 {
   "pipeline": "nf-core/demo",
   "version": "1.1.0",
-  "validated_at": "2026-06-13T20:50:07Z",
+  "validated_at": "2026-06-14T01:13:10Z",
   "validation": {
     "overall": "PASS",
     "oracle_wall_seconds": 1.6,
@@ -57,14 +57,15 @@
       "custom_dataset"
     ],
     "run": {
-      "run_dataset_id": "bc85e9ab-0523-4eeb-80cc-0361fea23824",
-      "terminal_status": "FAILED",
-      "duration_seconds": 373,
-      "output_dataset_url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/bc85e9ab-0523-4eeb-80cc-0361fea23824",
-      "failed_task": "None",
-      "submitted_at": "2026-06-13T21:28:01Z",
+      "run_dataset_id": "d12308b0-0d35-4f9f-b35f-4fb5b0fe3344",
+      "terminal_status": "COMPLETED",
+      "duration_seconds": 761,
+      "output_dataset_url": "https://dev.cirro.bio/project/28dc61c4-8632-443c-b003-c6f99dc46040/dataset/d12308b0-0d35-4f9f-b35f-4fb5b0fe3344",
+      "submitted_at": "2026-06-14T00:52:28Z",
+      "nextflow_version": "25.10.3",
       "params": {}
-    }
+    },
+    "executor_version": "25.10.3"
   },
   "bundle": {
     "repo": "CirroBio/nf-core-onboarding",
