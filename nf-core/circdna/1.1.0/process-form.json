@@ -31,7 +31,8 @@
             "type": "string",
             "description": "Specify input format. Default *FASTQ*. Options 'FASTQ' or 'BAM'.",
             "help_text": "Define which input file formats are used in the pipeline run. Use either `--input_format 'FASTQ'` or `--input_format 'BAM'`.",
-            "fa_icon": "fas fa-pen"
+            "fa_icon": "fas fa-pen",
+            "default": "FASTQ"
           },
           "bam_sorted": {
             "type": "boolean",
@@ -78,7 +79,8 @@
             "type": "string",
             "description": "Specifies the circular DNA identification algorithm to use - available 'circle_map_realign', 'circle_map_repeats', 'circle_finder', 'circexplorer2', and 'ampliconarchitect'. Multiple circle_identifier's can be specified with a comma-separated string. E.g. `--circle_identifier 'circle_map_realign,unicycler'`.",
             "help_text": "Specify the circle_identifier branch used. Multiple circle_identifier's can be specified with a comma-separated string. E.g. `--circle_identifier 'circle_map_realign,unicycler'`.",
-            "fa_icon": "fas fa-circle-notch"
+            "fa_icon": "fas fa-circle-notch",
+            "default": "circexplorer2,circle_finder,circle_map_realign,circle_map_repeats,unicycler"
           }
         }
       },
@@ -102,14 +104,16 @@
             "pattern": "^\\S+\\.fn?a(sta)?(\\.gz)?$",
             "description": "Path to FASTA genome file.",
             "help_text": "This parameter is *mandatory* if `--genome` is not specified. If you don't have a BWA index available this will be generated for you automatically. Combine with `--save_reference` to save BWA index for future runs.",
-            "fa_icon": "far fa-file-code"
+            "fa_icon": "far fa-file-code",
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/circdna/reference/genome.fa"
           },
           "igenomes_ignore": {
             "type": "boolean",
             "description": "Do not load the iGenomes reference config.",
             "fa_icon": "fas fa-ban",
             "hidden": true,
-            "help_text": "Do not load `igenomes.config` when running the pipeline. You may choose this option if you observe clashes between custom parameters and those supplied in `igenomes.config`."
+            "help_text": "Do not load `igenomes.config` when running the pipeline. You may choose this option if you observe clashes between custom parameters and those supplied in `igenomes.config`.",
+            "default": true
           },
           "save_reference": {
             "type": "boolean",
@@ -306,7 +310,8 @@
             "mimetype": "text/plain",
             "fa_icon": "fas fa-book",
             "description": "When running AmpliconArchitect, specify reference build ['GRCh37', 'GRCh38', 'mm10']. This is *mandatory* to match fasta and AA reference build!",
-            "help_text": "Specify the reference genome build used for alignment of the WGS reads."
+            "help_text": "Specify the reference genome build used for alignment of the WGS reads.",
+            "default": "GRCh38"
           },
           "cnvkit_cnn": {
             "type": "string",
@@ -343,13 +348,15 @@
             "type": "string",
             "description": "Institutional config name.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Test profile"
           },
           "config_profile_description": {
             "type": "string",
             "description": "Institutional config description.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Minimal test dataset to check pipeline function"
           },
           "config_profile_contact": {
             "type": "string",
@@ -545,7 +552,8 @@
             "type": "string",
             "description": "Specify input format. Default *FASTQ*. Options 'FASTQ' or 'BAM'.",
             "help_text": "Define which input file formats are used in the pipeline run. Use either `--input_format 'FASTQ'` or `--input_format 'BAM'`.",
-            "fa_icon": "fas fa-pen"
+            "fa_icon": "fas fa-pen",
+            "default": "FASTQ"
           },
           "bam_sorted": {
             "type": "boolean",
@@ -592,7 +600,8 @@
             "type": "string",
             "description": "Specifies the circular DNA identification algorithm to use - available 'circle_map_realign', 'circle_map_repeats', 'circle_finder', 'circexplorer2', and 'ampliconarchitect'. Multiple circle_identifier's can be specified with a comma-separated string. E.g. `--circle_identifier 'circle_map_realign,unicycler'`.",
             "help_text": "Specify the circle_identifier branch used. Multiple circle_identifier's can be specified with a comma-separated string. E.g. `--circle_identifier 'circle_map_realign,unicycler'`.",
-            "fa_icon": "fas fa-circle-notch"
+            "fa_icon": "fas fa-circle-notch",
+            "default": "circexplorer2,circle_finder,circle_map_realign,circle_map_repeats,unicycler"
           }
         }
       },
@@ -616,14 +625,16 @@
             "pattern": "^\\S+\\.fn?a(sta)?(\\.gz)?$",
             "description": "Path to FASTA genome file.",
             "help_text": "This parameter is *mandatory* if `--genome` is not specified. If you don't have a BWA index available this will be generated for you automatically. Combine with `--save_reference` to save BWA index for future runs.",
-            "fa_icon": "far fa-file-code"
+            "fa_icon": "far fa-file-code",
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/circdna/reference/genome.fa"
           },
           "igenomes_ignore": {
             "type": "boolean",
             "description": "Do not load the iGenomes reference config.",
             "fa_icon": "fas fa-ban",
             "hidden": true,
-            "help_text": "Do not load `igenomes.config` when running the pipeline. You may choose this option if you observe clashes between custom parameters and those supplied in `igenomes.config`."
+            "help_text": "Do not load `igenomes.config` when running the pipeline. You may choose this option if you observe clashes between custom parameters and those supplied in `igenomes.config`.",
+            "default": true
           },
           "save_reference": {
             "type": "boolean",
@@ -820,7 +831,8 @@
             "mimetype": "text/plain",
             "fa_icon": "fas fa-book",
             "description": "When running AmpliconArchitect, specify reference build ['GRCh37', 'GRCh38', 'mm10']. This is *mandatory* to match fasta and AA reference build!",
-            "help_text": "Specify the reference genome build used for alignment of the WGS reads."
+            "help_text": "Specify the reference genome build used for alignment of the WGS reads.",
+            "default": "GRCh38"
           },
           "cnvkit_cnn": {
             "type": "string",
@@ -857,13 +869,15 @@
             "type": "string",
             "description": "Institutional config name.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Test profile"
           },
           "config_profile_description": {
             "type": "string",
             "description": "Institutional config description.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Minimal test dataset to check pipeline function"
           },
           "config_profile_contact": {
             "type": "string",

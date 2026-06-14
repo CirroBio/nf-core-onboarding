@@ -1,5 +1,5 @@
 {
-  "id": "nf-callingcards-1-0-0",
+  "id": "process-nf-core-callingcards-1_0_0",
   "parentProcessIds": [
     "single-cell-10X"
   ],

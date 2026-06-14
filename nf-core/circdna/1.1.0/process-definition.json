@@ -1,5 +1,5 @@
 {
-  "id": "nf-circdna-1-1-0",
+  "id": "process-nf-core-circdna-1_1_0",
   "childProcessIds": [],
   "name": "nf-core/circdna",
   "desc": "Pipeline for the identification of circular DNAs",

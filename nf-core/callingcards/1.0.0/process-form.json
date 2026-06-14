@@ -68,7 +68,8 @@
           },
           "r1_crop": {
             "type": "integer",
-            "description": "If reads are single_end, this option allows the user to crop the R1 read. This occurs after trimming"
+            "description": "If reads are single_end, this option allows the user to crop the R1 read. This occurs after trimming",
+            "default": 75
           },
           "gzip_concatenated_fastq": {
             "type": "boolean",
@@ -77,7 +78,8 @@
           },
           "split_fastq_by_size": {
             "type": "integer",
-            "description": "split_fastq_by_size or split_fastq_by_part may be set, but not both at the same time. These parameters control how many parts the input fastq files are split into for parallel processing on a cluster. See seqkit split2 for more information. By default, split_fastq_by_part is set to 10, which will split every fastq file into 10 parts. If you wish to use split_fastq_by_size, set split_fastq_by_part to null to nullify the default value."
+            "description": "split_fastq_by_size or split_fastq_by_part may be set, but not both at the same time. These parameters control how many parts the input fastq files are split into for parallel processing on a cluster. See seqkit split2 for more information. By default, split_fastq_by_part is set to 10, which will split every fastq file into 10 parts. If you wish to use split_fastq_by_size, set split_fastq_by_part to null to nullify the default value.",
+            "default": 100
           },
           "split_fastq_by_part": {
             "type": "integer",
@@ -103,7 +105,8 @@
             "enum": [
               "yeast",
               "mammals"
-            ]
+            ],
+            "default": "yeast"
           },
           "input": {
             "type": "string",
@@ -139,17 +142,20 @@
           "save_genome_intermediate": {
             "type": "boolean",
             "description": "Set to true to save intermediate files from the PREPARE_GENOME step, eg genome indicies for a given aligner",
-            "hidden": true
+            "hidden": true,
+            "default": true
           },
           "save_sequence_intermediate": {
             "type": "boolean",
             "description": "Set to true to save intermediate files from the PREPARE_READS step, eg chunked and demultiplexed fastq files",
-            "hidden": true
+            "hidden": true,
+            "default": true
           },
           "save_alignment_intermediate": {
             "type": "boolean",
             "description": "set to true to save intermediate files form the ALIGN step, eg un-indexed and unsorted bam files",
-            "hidden": true
+            "hidden": true,
+            "default": true
           }
         }
       },
@@ -163,7 +169,8 @@
             "type": "string",
             "description": "Name of iGenomes reference.",
             "fa_icon": "fas fa-book",
-            "help_text": "If using a reference genome configured in the pipeline using iGenomes, use this parameter to give the ID for the reference. This is then used to build the full paths for all required reference genome files e.g. `--genome GRCh38`. \n\nSee the [nf-core website docs](https://nf-co.re/usage/reference_genomes) for more details."
+            "help_text": "If using a reference genome configured in the pipeline using iGenomes, use this parameter to give the ID for the reference. This is then used to build the full paths for all required reference genome files e.g. `--genome GRCh38`. \n\nSee the [nf-core website docs](https://nf-co.re/usage/reference_genomes) for more details.",
+            "default": "R64-1-1"
           },
           "fasta": {
             "type": "string",
@@ -260,13 +267,15 @@
             "type": "string",
             "description": "Institutional config name.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Yeast Test Profile"
           },
           "config_profile_description": {
             "type": "string",
             "description": "Institutional config description.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Minimal test dataset to check Yeast pipeline functions"
           },
           "config_profile_contact": {
             "type": "string",
@@ -506,7 +515,8 @@
           },
           "r1_crop": {
             "type": "integer",
-            "description": "If reads are single_end, this option allows the user to crop the R1 read. This occurs after trimming"
+            "description": "If reads are single_end, this option allows the user to crop the R1 read. This occurs after trimming",
+            "default": 75
           },
           "gzip_concatenated_fastq": {
             "type": "boolean",
@@ -515,7 +525,8 @@
           },
           "split_fastq_by_size": {
             "type": "integer",
-            "description": "split_fastq_by_size or split_fastq_by_part may be set, but not both at the same time. These parameters control how many parts the input fastq files are split into for parallel processing on a cluster. See seqkit split2 for more information. By default, split_fastq_by_part is set to 10, which will split every fastq file into 10 parts. If you wish to use split_fastq_by_size, set split_fastq_by_part to null to nullify the default value."
+            "description": "split_fastq_by_size or split_fastq_by_part may be set, but not both at the same time. These parameters control how many parts the input fastq files are split into for parallel processing on a cluster. See seqkit split2 for more information. By default, split_fastq_by_part is set to 10, which will split every fastq file into 10 parts. If you wish to use split_fastq_by_size, set split_fastq_by_part to null to nullify the default value.",
+            "default": 100
           },
           "split_fastq_by_part": {
             "type": "integer",
@@ -541,7 +552,8 @@
             "enum": [
               "yeast",
               "mammals"
-            ]
+            ],
+            "default": "yeast"
           },
           "input": {
             "type": "string",
@@ -577,17 +589,20 @@
           "save_genome_intermediate": {
             "type": "boolean",
             "description": "Set to true to save intermediate files from the PREPARE_GENOME step, eg genome indicies for a given aligner",
-            "hidden": true
+            "hidden": true,
+            "default": true
           },
           "save_sequence_intermediate": {
             "type": "boolean",
             "description": "Set to true to save intermediate files from the PREPARE_READS step, eg chunked and demultiplexed fastq files",
-            "hidden": true
+            "hidden": true,
+            "default": true
           },
           "save_alignment_intermediate": {
             "type": "boolean",
             "description": "set to true to save intermediate files form the ALIGN step, eg un-indexed and unsorted bam files",
-            "hidden": true
+            "hidden": true,
+            "default": true
           }
         }
       },
@@ -601,7 +616,8 @@
             "type": "string",
             "description": "Name of iGenomes reference.",
             "fa_icon": "fas fa-book",
-            "help_text": "If using a reference genome configured in the pipeline using iGenomes, use this parameter to give the ID for the reference. This is then used to build the full paths for all required reference genome files e.g. `--genome GRCh38`. \n\nSee the [nf-core website docs](https://nf-co.re/usage/reference_genomes) for more details."
+            "help_text": "If using a reference genome configured in the pipeline using iGenomes, use this parameter to give the ID for the reference. This is then used to build the full paths for all required reference genome files e.g. `--genome GRCh38`. \n\nSee the [nf-core website docs](https://nf-co.re/usage/reference_genomes) for more details.",
+            "default": "R64-1-1"
           },
           "fasta": {
             "type": "string",
@@ -698,13 +714,15 @@
             "type": "string",
             "description": "Institutional config name.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Yeast Test Profile"
           },
           "config_profile_description": {
             "type": "string",
             "description": "Institutional config description.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Minimal test dataset to check Yeast pipeline functions"
           },
           "config_profile_contact": {
             "type": "string",
