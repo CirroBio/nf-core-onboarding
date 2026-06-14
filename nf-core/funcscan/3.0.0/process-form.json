@@ -2341,7 +2341,7 @@
             "description": "Specify path to the AMP hmm model file(s) to search against. Must have quotes if wildcard used.",
             "help_text": "hmmsearch performs biosequence analysis using profile hidden Markov Models.\nThe models are specified in`.hmm` files that are specified with this parameter\n\ne.g. \n\n```\n--amp_hmmsearch_models '/<path>/<to>/<models>/*.hmm'\n```\n\nYou must wrap the path in quotes if you use a wildcard, to ensure Nextflow expansion _not_ bash! When using quotes, the absolute path to the HMM file(s) has to be given.\n\nFor more information check the HMMER [documentation](http://hmmer.org/).",
             "fa_icon": "fas fa-layer-group",
-            "default": "params.pipelines_testdata_base_path + 'funcscan/hmms/mybacteriocin.hmm'"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/funcscan/hmms/mybacteriocin.hmm"
           },
           "amp_hmmsearch_savealignments": {
             "type": "boolean",
