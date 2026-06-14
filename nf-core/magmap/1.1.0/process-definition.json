@@ -1,0 +1,121 @@
+{
+  "id": "process-nf-core-magmap-1_1_0",
+  "childProcessIds": [],
+  "dataType": null,
+  "name": "nf-core/magmap",
+  "desc": "nf-core/magmap is a bioinformatics best-practice analysis pipeline for mapping reads to a (large) collections of genomes.",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "DNA Sequencing",
+  "documentationUrl": "https://nf-co.re/magmap",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/magmap",
+    "version": "1.1.0",
+    "executorVersion": "25.10.4"
+  },
+  "allowMultipleSources": true,
+  "usesSampleSheet": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "process-input.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "formJson": "process-form.json",
+  "webOptimizationJson": "process-output.json",
+  "fileMappingRules": [
+    {
+      "description": "bbmap outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "bbmap/logs",
+          "description": "bbmap",
+          "sampleMatchingPattern": "bbmap/.*"
+        }
+      ]
+    },
+    {
+      "description": "fastqc outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "fastqc/s0_1_fastqc.html",
+          "description": "fastqc",
+          "sampleMatchingPattern": "fastqc/.*"
+        }
+      ]
+    },
+    {
+      "description": "featurecounts outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "featurecounts/s0.CDS.featureCounts.tsv",
+          "description": "featurecounts",
+          "sampleMatchingPattern": "featurecounts/.*"
+        }
+      ]
+    },
+    {
+      "description": "multiqc outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "multiqc/multiqc_data",
+          "description": "multiqc",
+          "sampleMatchingPattern": "multiqc/.*"
+        }
+      ]
+    },
+    {
+      "description": "pipeline_info outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "pipeline_info/nf_core_magmap_software_mqc_versions.yml",
+          "description": "pipeline_info",
+          "sampleMatchingPattern": "pipeline_info/.*"
+        }
+      ]
+    },
+    {
+      "description": "samtools outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "samtools/s0.flagstat",
+          "description": "samtools",
+          "sampleMatchingPattern": "samtools/.*"
+        }
+      ]
+    },
+    {
+      "description": "summary_tables outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "summary_tables/magmap.CDS.counts.tsv.gz",
+          "description": "summary_tables",
+          "sampleMatchingPattern": "summary_tables/.*"
+        }
+      ]
+    },
+    {
+      "description": "trimgalore outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "trimgalore/fastqc",
+          "description": "trimgalore",
+          "sampleMatchingPattern": "trimgalore/.*"
+        }
+      ]
+    }
+  ]
+}
