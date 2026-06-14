@@ -13,7 +13,7 @@ def main() -> None:
     if "fastq_2" not in sheet.columns:
         sheet["fastq_2"] = ""
     sheet[["sample", "fastq_1", "fastq_2"]].to_csv("samplesheet.csv", index=False)
-    ds.add_param("input", "samplesheet.csv")
+    ds.add_param("input", "samplesheet.csv", overwrite=True)
 
 
 if __name__ == "__main__":
