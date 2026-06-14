@@ -1,0 +1,197 @@
+{
+  "id": "process-nf-core-ampliseq-2_17_0",
+  "childProcessIds": [],
+  "dataType": null,
+  "name": "nf-core/ampliseq",
+  "desc": "Amplicon sequencing analysis workflow using DADA2 and QIIME2",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "Microbial Analysis",
+  "documentationUrl": "https://nf-co.re/ampliseq",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/ampliseq",
+    "version": "2.17.0"
+  },
+  "allowMultipleSources": true,
+  "usesSampleSheet": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "process-input.json",
+  "formJson": "process-form.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "webOptimizationJson": "process-output.json",
+  "fileMappingRules": [
+    {
+      "description": "SBDI outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "SBDI/annotation.tsv",
+          "description": "SBDI",
+          "sampleMatchingPattern": "SBDI/.*"
+        }
+      ]
+    },
+    {
+      "description": "asv_length_filter outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "asv_length_filter/ASV_len_filt.tsv",
+          "description": "asv_length_filter",
+          "sampleMatchingPattern": "asv_length_filter/.*"
+        }
+      ]
+    },
+    {
+      "description": "barrnap outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "barrnap/ASV_seqs.ssu.fasta",
+          "description": "barrnap",
+          "sampleMatchingPattern": "barrnap/.*"
+        }
+      ]
+    },
+    {
+      "description": "cutadapt outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "cutadapt/assignTaxonomy.cutadapt.log",
+          "description": "cutadapt",
+          "sampleMatchingPattern": "cutadapt/.*"
+        }
+      ]
+    },
+    {
+      "description": "dada2 outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "dada2/ASV_seqs.fasta",
+          "description": "dada2",
+          "sampleMatchingPattern": "dada2/.*"
+        }
+      ]
+    },
+    {
+      "description": "decontam outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "decontam/decontaminated.tsv",
+          "description": "decontam",
+          "sampleMatchingPattern": "decontam/.*"
+        }
+      ]
+    },
+    {
+      "description": "fastqc outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "fastqc/sampleID_1_1_fastqc.html",
+          "description": "fastqc",
+          "sampleMatchingPattern": "fastqc/.*"
+        }
+      ]
+    },
+    {
+      "description": "input outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "input/Metadata.tsv",
+          "description": "input",
+          "sampleMatchingPattern": "input/.*"
+        }
+      ]
+    },
+    {
+      "description": "multiqc outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "multiqc/multiqc_data",
+          "description": "multiqc",
+          "sampleMatchingPattern": "multiqc/.*"
+        }
+      ]
+    },
+    {
+      "description": "phyloseq outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "phyloseq/dada2_phyloseq.rds",
+          "description": "phyloseq",
+          "sampleMatchingPattern": "phyloseq/.*"
+        }
+      ]
+    },
+    {
+      "description": "pipeline_info outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "pipeline_info/software_versions.yml",
+          "description": "pipeline_info",
+          "sampleMatchingPattern": "pipeline_info/.*"
+        }
+      ]
+    },
+    {
+      "description": "qiime2 outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "qiime2/abundance_tables",
+          "description": "qiime2",
+          "sampleMatchingPattern": "qiime2/.*"
+        }
+      ]
+    },
+    {
+      "description": "summary_report outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "summary_report/asv_length_profile_before_length_filter.svg",
+          "description": "summary_report",
+          "sampleMatchingPattern": "summary_report/.*"
+        }
+      ]
+    },
+    {
+      "description": "treesummarizedexperiment outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "treesummarizedexperiment/dada2_TreeSummarizedExperiment.rds",
+          "description": "treesummarizedexperiment",
+          "sampleMatchingPattern": "treesummarizedexperiment/.*"
+        }
+      ]
+    },
+    {
+      "description": "vsearch_cluster outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "vsearch_cluster/ASV_post_clustering_filtered.fna",
+          "description": "vsearch_cluster",
+          "sampleMatchingPattern": "vsearch_cluster/.*"
+        }
+      ]
+    }
+  ]
+}
