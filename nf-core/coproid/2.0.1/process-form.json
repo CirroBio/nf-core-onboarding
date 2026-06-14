@@ -97,14 +97,14 @@
             "format": "file-path",
             "exists": true,
             "description": "Path to pre-downloaded ~/.etetoolkit/taxa.sqlite file, if not supplied it will be pulled from the test-data repository",
-            "default": "[:]/genomics/prokaryotes/metagenome/taxonomy/misc/taxa_sqlite.xz"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/prokaryotes/metagenome/taxonomy/misc/taxa_sqlite.xz"
           },
           "taxa_sqlite_traverse_pkl": {
             "type": "string",
             "format": "file-path",
             "exists": true,
             "description": "Path to pre-downloaded ~/.etetoolkit/taxa.sqlite.traverse.pkl file, if not supplied it will be pulled from the test-data repository",
-            "default": "[:]/genomics/prokaryotes/metagenome/taxonomy/misc/taxa_sqlite_traverse.pkl"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/prokaryotes/metagenome/taxonomy/misc/taxa_sqlite_traverse.pkl"
           },
           "sam2lca_db": {
             "type": "string",
@@ -403,14 +403,14 @@
             "format": "file-path",
             "exists": true,
             "description": "Path to pre-downloaded ~/.etetoolkit/taxa.sqlite file, if not supplied it will be pulled from the test-data repository",
-            "default": "[:]/genomics/prokaryotes/metagenome/taxonomy/misc/taxa_sqlite.xz"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/prokaryotes/metagenome/taxonomy/misc/taxa_sqlite.xz"
           },
           "taxa_sqlite_traverse_pkl": {
             "type": "string",
             "format": "file-path",
             "exists": true,
             "description": "Path to pre-downloaded ~/.etetoolkit/taxa.sqlite.traverse.pkl file, if not supplied it will be pulled from the test-data repository",
-            "default": "[:]/genomics/prokaryotes/metagenome/taxonomy/misc/taxa_sqlite_traverse.pkl"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/prokaryotes/metagenome/taxonomy/misc/taxa_sqlite_traverse.pkl"
           },
           "sam2lca_db": {
             "type": "string",
