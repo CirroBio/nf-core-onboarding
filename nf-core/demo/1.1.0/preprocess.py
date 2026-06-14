@@ -87,3 +87,6 @@ if __name__ == "__main__":
     ds = PreprocessDataset.from_running()
     samplesheet = make_samplesheet(ds)
     samplesheet.to_csv("samplesheet.csv", index=False)
+    # Wire --input to the samplesheet we just built; without this the
+    # workflow falls back to the raw dataset dir (rejected by nf-schema).
+    ds.add_param("input", "samplesheet.csv")
