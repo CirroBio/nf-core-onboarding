@@ -398,7 +398,8 @@
             "type": "string",
             "description": "Name of iGenomes reference.",
             "fa_icon": "fas fa-book",
-            "help_text": "If using a reference genome configured in the pipeline using iGenomes, use this parameter to give the ID for the reference. This is then used to build the full paths for all required reference genome files e.g. `--genome GRCh38`. \n\nSee the [nf-core website docs](https://nf-co.re/usage/reference_genomes) for more details."
+            "help_text": "If using a reference genome configured in the pipeline using iGenomes, use this parameter to give the ID for the reference. This is then used to build the full paths for all required reference genome files e.g. `--genome GRCh38`. \n\nSee the [nf-core website docs](https://nf-co.re/usage/reference_genomes) for more details.",
+            "default": "R64-1-1"
           },
           "fasta": {
             "type": "string",
@@ -492,13 +493,15 @@
             "type": "string",
             "description": "Institutional config name.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Test profile"
           },
           "config_profile_description": {
             "type": "string",
             "description": "Institutional config description.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Minimal test dataset to check pipeline function"
           },
           "config_profile_contact": {
             "type": "string",

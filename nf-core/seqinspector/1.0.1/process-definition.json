@@ -1,5 +1,5 @@
 {
-  "id": "nf-seqinspector-1-0-1",
+  "id": "process-nf-core-seqinspector-1_0_1",
   "parentProcessIds": [
     "single-cell-10X"
   ],
