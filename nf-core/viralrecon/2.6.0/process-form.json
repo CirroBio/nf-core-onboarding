@@ -32,7 +32,8 @@
             "enum": [
               "illumina",
               "nanopore"
-            ]
+            ],
+            "default": "illumina"
           },
           "protocol": {
             "type": "string",
@@ -41,7 +42,8 @@
             "enum": [
               "metagenomic",
               "amplicon"
-            ]
+            ],
+            "default": "amplicon"
           },
           "outdir": {
             "type": "string",
@@ -68,7 +70,8 @@
             "type": "string",
             "description": "Name of viral reference genome.",
             "fa_icon": "fas fa-book",
-            "help_text": "You can find the keys to specify the genomes in the [Genomes config file](https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config)."
+            "help_text": "You can find the keys to specify the genomes in the [Genomes config file](https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config).",
+            "default": "MN908947.3"
           },
           "fasta": {
             "type": "string",
@@ -115,13 +118,15 @@
             "type": "string",
             "fa_icon": "fas fa-sliders-h",
             "description": "The primer set to be used for the data analysis.",
-            "help_text": "Where possible we are trying to collate links and settings for standard primer sets to make it easier to run the pipeline with standard keys. See https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config"
+            "help_text": "Where possible we are trying to collate links and settings for standard primer sets to make it easier to run the pipeline with standard keys. See https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config",
+            "default": "artic"
           },
           "primer_set_version": {
             "type": "number",
             "fa_icon": "fas fa-code-branch",
             "description": "Version of the primer set e.g. '--primer_set artic --primer_set_version 3'.",
-            "help_text": "Where possible we are trying to collate links and settings for standard primer sets to make it easier to run the pipeline with standard keys. See https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config"
+            "help_text": "Where possible we are trying to collate links and settings for standard primer sets to make it easier to run the pipeline with standard keys. See https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config",
+            "default": 1
           },
           "primer_left_suffix": {
             "type": "string",
@@ -398,7 +403,8 @@
             "enum": [
               "ivar",
               "bcftools"
-            ]
+            ],
+            "default": "ivar"
           },
           "consensus_caller": {
             "type": "string",
@@ -698,13 +704,15 @@
             "type": "string",
             "description": "Institutional config name.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Test profile"
           },
           "config_profile_description": {
             "type": "string",
             "description": "Institutional config description.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Minimal test dataset to check pipeline function"
           },
           "config_profile_contact": {
             "type": "string",
@@ -748,7 +756,8 @@
             "enum": [
               "illumina",
               "nanopore"
-            ]
+            ],
+            "default": "illumina"
           },
           "protocol": {
             "type": "string",
@@ -757,7 +766,8 @@
             "enum": [
               "metagenomic",
               "amplicon"
-            ]
+            ],
+            "default": "amplicon"
           },
           "outdir": {
             "type": "string",
@@ -784,7 +794,8 @@
             "type": "string",
             "description": "Name of viral reference genome.",
             "fa_icon": "fas fa-book",
-            "help_text": "You can find the keys to specify the genomes in the [Genomes config file](https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config)."
+            "help_text": "You can find the keys to specify the genomes in the [Genomes config file](https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config).",
+            "default": "MN908947.3"
           },
           "fasta": {
             "type": "string",
@@ -831,13 +842,15 @@
             "type": "string",
             "fa_icon": "fas fa-sliders-h",
             "description": "The primer set to be used for the data analysis.",
-            "help_text": "Where possible we are trying to collate links and settings for standard primer sets to make it easier to run the pipeline with standard keys. See https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config"
+            "help_text": "Where possible we are trying to collate links and settings for standard primer sets to make it easier to run the pipeline with standard keys. See https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config",
+            "default": "artic"
           },
           "primer_set_version": {
             "type": "number",
             "fa_icon": "fas fa-code-branch",
             "description": "Version of the primer set e.g. '--primer_set artic --primer_set_version 3'.",
-            "help_text": "Where possible we are trying to collate links and settings for standard primer sets to make it easier to run the pipeline with standard keys. See https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config"
+            "help_text": "Where possible we are trying to collate links and settings for standard primer sets to make it easier to run the pipeline with standard keys. See https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config",
+            "default": 1
           },
           "primer_left_suffix": {
             "type": "string",
@@ -1114,7 +1127,8 @@
             "enum": [
               "ivar",
               "bcftools"
-            ]
+            ],
+            "default": "ivar"
           },
           "consensus_caller": {
             "type": "string",
@@ -1414,13 +1428,15 @@
             "type": "string",
             "description": "Institutional config name.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Test profile"
           },
           "config_profile_description": {
             "type": "string",
             "description": "Institutional config description.",
             "hidden": true,
-            "fa_icon": "fas fa-users-cog"
+            "fa_icon": "fas fa-users-cog",
+            "default": "Minimal test dataset to check pipeline function"
           },
           "config_profile_contact": {
             "type": "string",
