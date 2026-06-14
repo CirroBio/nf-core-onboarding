@@ -1,50 +1,63 @@
 #!/usr/bin/env python3
-"""Cirro preprocess: build the workflow input samplesheet from the dataset."""
+"""Cirro preprocess: build the pipeline's DECLARED samplesheet from ds.files."""
+import re
+
 import pandas as pd
 from cirro.helpers.preprocess_dataset import PreprocessDataset
 
+SAMPLE_COL = 'sample_id'
+FASTQ_COLS = ()
+SINGLE_COLS = [('mapped', ('.bam', '.cram')), ('index', ('.bai', '.crai'))]
+META_COLS = ('file_type',)
+COLUMNS = ('sample_id', 'mapped', 'index', 'file_type')
+_FASTQ_EXTS = (".fastq.gz", ".fq.gz", ".fastq", ".fq")
 
-def main() -> None:
+
+def _sample_of(path, given):
+    # Use the dataset's sample value when populated; otherwise derive it from the
+    # filename (Cirro leaves `sample` empty for some ingests), stripping the data
+    # extension then the read tag (_R1/_R2/_1/_2): e.g. test1_1.fastq.gz -> test1.
+    # Strip COMPOUND index suffixes (A.bam.bai) so a file and its index collapse to
+    # one sample (A), not two; otherwise the bam and its .bai land in separate rows.
+    if isinstance(given, str) and given.strip():
+        return given
+    base = path.split("/")[-1].split("?")[0]
+    base = re.sub(
+        r"\.(fastq|fq)(\.gz)?$|\.(bam|cram)(\.(bai|crai|csi))?$|\.(bai|crai|csi)$|\.json$",
+        "", base, flags=re.I)
+    return re.sub(r"_R?[12]$", "", base)
+
+
+def main():
     ds = PreprocessDataset.from_running()
-    # Generic "Files" dataset has no pivot-able samplesheet; build one from
-    # ds.files defensively — Cirro's column names and read encodings vary across
-    # ingest shapes, so resolve them at runtime and pair R1/R2 into fastq_1/2.
     files = ds.files.copy()
     ds.logger.info(f"[preprocess] ds.files columns: {list(files.columns)}")
-    sample_col = "sample" if "sample" in files.columns else (
-        "sampleName" if "sampleName" in files.columns else files.columns[0])
-    file_col = next(
-        (c for c in ("file", "path", "relativePath", "dataPath") if c in files.columns),
-        files.columns[-1])
-    read_col = next((c for c in ("read", "readType", "read_type") if c in files.columns), None)
-    _R1 = {1, 1.0, "1", "R1", "r1", "READ1", "read1"}
-    _R2 = {2, 2.0, "2", "R2", "r2", "READ2", "read2"}
-    if read_col is not None:
-        sheet = files.pivot_table(
-            index=sample_col, columns=read_col, values=file_col, aggfunc="first"
-        ).reset_index()
-        sheet.columns.name = None
-        rename = {c: ("fastq_1" if c in _R1 else "fastq_2") for c in sheet.columns
-                  if c in _R1 or c in _R2}
-        sheet = sheet.rename(columns=rename)
-    else:
-        rows = []
-        for sample_val, group in files.groupby(sample_col):
-            paths = sorted(group[file_col].dropna().astype(str))
-            rows.append({
-                "sample": sample_val,
-                "fastq_1": paths[0] if paths else "",
-                "fastq_2": paths[1] if len(paths) > 1 else "",
-            })
-        sheet = pd.DataFrame(rows)
-    if sample_col != "sample" and sample_col in sheet.columns:
-        sheet = sheet.rename(columns={sample_col: "sample"})
-    for col in ("fastq_1", "fastq_2"):
-        if col not in sheet.columns:
-            sheet[col] = ""
-    sheet["fastq_2"] = sheet["fastq_2"].fillna("")
-    sheet[["sample", "fastq_1", "fastq_2"]].to_csv("samplesheet.csv", index=False)
-    ds.add_param("input", "samplesheet.csv")
+    scol = next((c for c in ("sample", "sampleName") if c in files.columns), None)
+    fcol = next((c for c in ("file", "path", "relativePath", "dataPath") if c in files.columns),
+                files.columns[-1])
+    # fillna BEFORE astype: an empty `sample` cell reads back as NaN, and
+    # NaN.astype(str) is the string "nan" — truthy, so it would defeat the
+    # derive-from-filename fallback. Normalise empties to "" first.
+    given = list(files[scol].fillna("").astype(str)) if scol else [""] * len(files)
+    files = files.assign(_s=[_sample_of(str(f), g) for f, g in zip(files[fcol], given)])
+    rows = []
+    for sample_val, group in files.groupby("_s"):
+        paths = sorted(str(p) for p in group[fcol].dropna())
+        fastqs = [p for p in paths if p.split("?")[0].lower().endswith(_FASTQ_EXTS)] or paths
+        row = {SAMPLE_COL: sample_val}
+        for i, cn in enumerate(FASTQ_COLS):
+            row[cn] = fastqs[i] if i < len(fastqs) else ""
+        for cn, exts in SINGLE_COLS:
+            row[cn] = next((p for p in paths if p.split("?")[0].lower().endswith(tuple(exts))), "")
+        for cn in META_COLS:
+            row[cn] = ""
+        rows.append(row)
+    sheet = pd.DataFrame(rows)
+    for c in COLUMNS:
+        if c not in sheet.columns:
+            sheet[c] = ""
+    sheet[list(COLUMNS)].to_csv("samplesheet.csv", index=False)
+    ds.add_param("input", "samplesheet.csv", overwrite=True)
 
 
 if __name__ == "__main__":
