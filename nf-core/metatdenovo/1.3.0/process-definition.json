@@ -1,0 +1,154 @@
+{
+  "id": "process-nf-core-metatdenovo-1_3_0",
+  "childProcessIds": [],
+  "dataType": null,
+  "name": "nf-core/metatdenovo",
+  "desc": "Assembly and annotation of metatranscriptomic data, both prokaryotic and eukaryotic",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "DNA Sequencing",
+  "documentationUrl": "https://nf-co.re/metatdenovo",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/metatdenovo",
+    "version": "1.3.0",
+    "executorVersion": "25.10.4"
+  },
+  "allowMultipleSources": true,
+  "usesSampleSheet": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "process-input.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "formJson": "process-form.json",
+  "webOptimizationJson": "process-output.json",
+  "fileMappingRules": [
+    {
+      "description": "bbmap outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "bbmap/bbduk",
+          "description": "bbmap",
+          "sampleMatchingPattern": "bbmap/.*"
+        }
+      ]
+    },
+    {
+      "description": "featurecounts outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "featurecounts/SAMPLE1_PE.featureCounts.tsv",
+          "description": "featurecounts",
+          "sampleMatchingPattern": "featurecounts/.*"
+        }
+      ]
+    },
+    {
+      "description": "hmmer outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "hmmer/hits",
+          "description": "hmmer",
+          "sampleMatchingPattern": "hmmer/.*"
+        }
+      ]
+    },
+    {
+      "description": "megahit outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "megahit/megahit_out",
+          "description": "megahit",
+          "sampleMatchingPattern": "megahit/.*"
+        }
+      ]
+    },
+    {
+      "description": "multiqc outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "multiqc/multiqc_data",
+          "description": "multiqc",
+          "sampleMatchingPattern": "multiqc/.*"
+        }
+      ]
+    },
+    {
+      "description": "pipeline_info outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "pipeline_info/nf_core_metatdenovo_software_mqc_versions.yml",
+          "description": "pipeline_info",
+          "sampleMatchingPattern": "pipeline_info/.*"
+        }
+      ]
+    },
+    {
+      "description": "prodigal outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "prodigal/megahit.prodigal.faa.gz",
+          "description": "prodigal",
+          "sampleMatchingPattern": "prodigal/.*"
+        }
+      ]
+    },
+    {
+      "description": "samtools outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "samtools/SAMPLE1_PE.sorted.bam",
+          "description": "samtools",
+          "sampleMatchingPattern": "samtools/.*"
+        }
+      ]
+    },
+    {
+      "description": "summary_tables outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "summary_tables/megahit.prodigal.counts.tsv.gz",
+          "description": "summary_tables",
+          "sampleMatchingPattern": "summary_tables/.*"
+        }
+      ]
+    },
+    {
+      "description": "transrate outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "transrate/megahit_assemblies_mqc.csv",
+          "description": "transrate",
+          "sampleMatchingPattern": "transrate/.*"
+        }
+      ]
+    },
+    {
+      "description": "trimgalore outputs",
+      "min": 0,
+      "fileNamePatterns": [
+        {
+          "exampleName": "trimgalore/SAMPLE1_PE_1.fastq.gz_trimming_report.txt",
+          "description": "trimgalore",
+          "sampleMatchingPattern": "trimgalore/.*"
+        }
+      ]
+    }
+  ]
+}
