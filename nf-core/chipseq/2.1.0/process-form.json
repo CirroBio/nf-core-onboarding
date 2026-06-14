@@ -93,7 +93,7 @@
             "description": "Path to FASTA genome file.",
             "help_text": "This parameter is *mandatory* if `--genome` is not specified. If you don't have the appropriate alignment index available this will be generated for you automatically. Combine with `--save_reference` to save alignment index for future runs.",
             "fa_icon": "far fa-file-code",
-            "default": "params.pipelines_testdata_base_path + 'atacseq/reference/genome.fa'"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/atacseq/reference/genome.fa"
           },
           "gtf": {
             "type": "string",
@@ -104,7 +104,7 @@
             "description": "Path to GTF annotation file.",
             "fa_icon": "fas fa-code-branch",
             "help_text": "Either this parameter or `--gff` is *mandatory* if --genome is not specified.",
-            "default": "params.pipelines_testdata_base_path + 'atacseq/reference/genes.gtf'"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/atacseq/reference/genes.gtf"
           },
           "gff": {
             "type": "string",
@@ -740,7 +740,7 @@
             "description": "Path to FASTA genome file.",
             "help_text": "This parameter is *mandatory* if `--genome` is not specified. If you don't have the appropriate alignment index available this will be generated for you automatically. Combine with `--save_reference` to save alignment index for future runs.",
             "fa_icon": "far fa-file-code",
-            "default": "params.pipelines_testdata_base_path + 'atacseq/reference/genome.fa'"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/atacseq/reference/genome.fa"
           },
           "gtf": {
             "type": "string",
@@ -751,7 +751,7 @@
             "description": "Path to GTF annotation file.",
             "fa_icon": "fas fa-code-branch",
             "help_text": "Either this parameter or `--gff` is *mandatory* if --genome is not specified.",
-            "default": "params.pipelines_testdata_base_path + 'atacseq/reference/genes.gtf'"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/atacseq/reference/genes.gtf"
           },
           "gff": {
             "type": "string",
