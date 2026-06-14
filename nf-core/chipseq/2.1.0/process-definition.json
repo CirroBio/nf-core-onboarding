@@ -1,0 +1,30 @@
+{
+  "id": "process-nf-core-chipseq-2_1_0",
+  "childProcessIds": [],
+  "name": "nf-core/chipseq",
+  "desc": "ChIP-seq peak-calling and differential analysis pipeline.",
+  "executor": "NEXTFLOW",
+  "pipelineTypeOverride": "nf-core",
+  "category": "DNA Sequencing",
+  "documentationUrl": "https://nf-co.re/chipseq",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "main.nf",
+    "uri": "nf-core/chipseq",
+    "version": "2.1.0"
+  },
+  "usesSampleSheet": true,
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "process-input.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "formJson": "process-form.json",
+  "webOptimizationJson": "process-output.json",
+  "fileMappingRules": [],
+  "dataType": null
+}
