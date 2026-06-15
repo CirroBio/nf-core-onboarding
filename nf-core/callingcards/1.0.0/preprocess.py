@@ -9,6 +9,7 @@ SAMPLE_COL = 'sample'
 FASTQ_COLS = ('fastq_1', 'fastq_2')
 SINGLE_COLS = [('barcode_details', ('.json',))]
 META_COLS = ()
+INT_COLS = ()
 COLUMNS = ('sample', 'fastq_1', 'fastq_2', 'barcode_details')
 _FASTQ_EXTS = (".fastq.gz", ".fq.gz", ".fastq", ".fq")
 
@@ -50,7 +51,9 @@ def main():
         for cn, exts in SINGLE_COLS:
             row[cn] = next((p for p in paths if p.split("?")[0].lower().endswith(tuple(exts))), "")
         for cn in META_COLS:
-            row[cn] = ""
+            # An OLD-STYLE check_samplesheet.py requires integer columns (e.g. replicate)
+            # to be a decimal — blank fails `replicate.isdecimal()`, so default those to 1.
+            row[cn] = "1" if cn in INT_COLS else ""
         rows.append(row)
     sheet = pd.DataFrame(rows)
     for c in COLUMNS:
