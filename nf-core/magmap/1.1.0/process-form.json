@@ -454,7 +454,7 @@
             "fa_icon": "fas fa-dna",
             "description": "Path to a file containing information about the genomes to map to, see [usage docs](https://nf-co.re/magmap/usage#genome-input).",
             "schema": "assets/schema_genomeinfo.json",
-            "default": "params.pipelines_testdata_base_path + 'magmap/testdata/genometest.csv'"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/magmap/testdata/genometest.csv"
           },
           "gtdb_metadata": {
             "type": "string",
@@ -596,7 +596,7 @@
             "type": "string",
             "description": "Instructs BBduk to use a fasta file to filter away sequences before running further analysis.",
             "fa_icon": "fas fa-filter",
-            "default": "params.pipelines_testdata_base_path + 'metatdenovo/test_data/rrna.fna.gz'"
+            "default": "https://raw.githubusercontent.com/nf-core/test-datasets/metatdenovo/test_data/rrna.fna.gz"
           },
           "bbmap_minid": {
             "type": "number",
